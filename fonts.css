@@ -1,0 +1,9 @@
+/* Обычный */
+@font-face {
+	font-family: 'ZenMaruGothic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Zen Maru'),
+
+		url('/fonts/ZenMaruGothic-Light.ttf') format('truetype'),
+}
