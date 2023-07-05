@@ -36,9 +36,8 @@ body {
 }
 header {
   position: fixed;
+  height: 155px;
   width: 100%;
-  height: 180px;
-  background-color: red;
   padding: 0px;
   margin: 0px;
 }
@@ -47,6 +46,8 @@ header nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 header nav img {
   width: 255px;
@@ -54,18 +55,110 @@ header nav img {
 }
 header nav menu {
   display: flex;
+  padding: 0px;
 }
 header nav menu li {
-  font-size: 18px;
+  font-size: 16px;
   list-style: none;
-  margin: 10px;
+  margin: 0px 20px;
 }
 header nav menu li a {
   text-decoration: none;
   color: black;
+  padding: 5px;
+  position: relative;
+  text-transform: uppercase;
+}
+header nav menu li a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: 0.5s;
+  left: 0px;
+  top: 35px;
+}
+header nav menu li a:hover::after {
+  transition: 0.5s;
+  left: 10px;
+  transform: translate(5px, 0px);
+  opacity: 1;
+  visibility: visible;
 }
 header nav .phone a {
   display: flex;
   text-decoration: none;
   color: black;
+  width: 255px;
+}
+header nav .phone a img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+.btn {
+  color: black;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 1px solid black;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
+}
+.about {
+  padding-top: 155px;
+  height: 700px;
+  margin: auto 12%;
+}
+.about .image img {
+  margin-top: 100px;
+  right: 10%;
+  width: 1086px;
+  height: 584px;
+  z-index: -1;
+  position: absolute;
+  display: block;
+}
+.about .text-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 700px;
+}
+.about .text-wrapper .text-fake {
+  display: flex;
+  display: block;
+}
+.about .text-wrapper .text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  line-height: 20px;
+  border-left: 2px solid #FDFA25;
+  border-bottom: 2px solid #FDFA25;
+  box-shadow: 3px -3px 2px rgba(0, 0, 0, 0.1);
+}
+.about .text-wrapper .text h1 {
+  font-family: 'ZenMaruGothicMedium';
+  font-weight: 100;
+  margin: 15px 0px;
+}
+.about .text-wrapper .text p {
+  font-family: 'ZenMaruGothicRegular';
+}
+.about .btn-appointment {
+  position: relative;
+  top: -100px;
 }
