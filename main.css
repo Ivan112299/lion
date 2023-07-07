@@ -30,13 +30,14 @@
 }
 .btn {
   color: black;
-  padding: 10px 20px;
+  padding: 20px 30px;
   text-transform: uppercase;
   font-size: 16px;
   border: 1px solid black;
   background-color: #fff;
   cursor: pointer;
   transition: 0.3s;
+  font-family: 'ZenMaruGothicBold';
 }
 .btn:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
@@ -144,6 +145,7 @@ header nav .phone a img {
   flex-direction: column;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
   padding: 15px;
   line-height: 20px;
   border-left: 2px solid #FDFA25;
@@ -170,4 +172,66 @@ header nav .phone a img {
 }
 .slider .photo-mini {
   width: 100px;
+}
+.contacts {
+  height: 100%;
+  width: 1000px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #a0cbcb;
+}
+.contacts .title {
+  background-color: #1f5050;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contacts .title h2 {
+  font-family: 'ZenMaruGothicMedium';
+  font-weight: 100;
+  font-size: 32px;
+  margin: 10px 0px;
+}
+.contacts .title .subtitle {
+  margin: 10px 0px;
+}
+.contacts .form-box {
+  display: flex;
+  width: 100%;
+  height: 270px;
+  background-color: aqua;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.contacts .form-box .input-box {
+  display: inline-block;
+  width: 46%;
+  padding: 20px;
+  background-color: bisque;
+}
+.contacts .form-box .input-box input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  border-bottom: 1px solid black;
+  transition: 0.5s;
+}
+.contacts .form-box .input-box input:focus ~ label {
+  transform: translateY(-230%);
+}
+.contacts .form-box .input-box input:placeholder ~ label {
+  transform: translateY(-230%);
+}
+.contacts .form-box .input-box label {
+  display: block;
+  position: absolute;
+  transform: translateY(-120%);
+  transition: 0.5s;
+  pointer-events: none;
 }
