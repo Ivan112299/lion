@@ -39,6 +39,19 @@
 @base-black: black;
 @base-yellow: #FDFA25;
 
+.btn {
+  color: @base-black;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 1px solid @base-black;
+  background-color: @base-white;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1),-3px -3px 10px rgba(0, 0, 0, 0.1) ;
+  }
+}
 
 body {
   background-color: @base-white;
@@ -115,20 +128,9 @@ header {
     }
   }
 }
-.btn {
-  color: @base-black;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-size: 16px;
-  border: 1px solid @base-black;
-  background-color: @base-white;
-  cursor: pointer;
-  transition: .5s;
-  &:hover {
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1),-3px -3px 10px rgba(0, 0, 0, 0.1) ;
-  }
-}
+
 .about {
+	// display: none;			// убрать
   padding-top: 155px;
   height: 700px;
   margin: auto 12%;
@@ -177,4 +179,14 @@ header {
     position: relative;
     top: -100px;
   }
+}
+.slider {
+	padding-top: 155px;	// убрать
+	background-color: antiquewhite;
+	height: 700px;
+	margin: auto 12%;
+
+	.photo-mini{
+		width: 100px;
+	}
 }
