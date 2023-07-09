@@ -28,9 +28,22 @@
   font-weight: 700;
   src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Black.ttf') format('truetype');
 }
+@media screen and (max-width: 1300px) {
+  .carousel img {
+    width: calc(100% / 2) !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  body {
+    background-color: #812525;
+  }
+  .carousel img {
+    width: 100%!important;
+  }
+}
 .btn {
   color: black;
-  padding: 20px 30px;
+  padding: 20px 60px;
   text-transform: uppercase;
   font-size: 16px;
   border: 1px solid black;
@@ -52,8 +65,10 @@ header {
   position: fixed;
   height: 155px;
   width: 100%;
+  background-color: #fff;
   padding: 0px;
   margin: 0px;
+  z-index: 1000;
 }
 header nav {
   display: flex;
@@ -122,7 +137,7 @@ header nav .phone a img {
 }
 .about .image img {
   margin-top: 100px;
-  right: 10%;
+  right: 12%;
   width: 1086px;
   height: 584px;
   z-index: -1;
@@ -165,18 +180,103 @@ header nav .phone a img {
   top: -100px;
 }
 .slider {
-  padding-top: 155px;
-  background-color: antiquewhite;
-  height: 700px;
-  margin: auto 12%;
+  height: 600px;
+  margin: 100px 12% 0px;
 }
-.slider .photo-mini {
+.slider .wrapper .carousel {
+  margin-top: 40px;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  font-size: 0;
+  cursor: pointer;
+  overflow: hidden;
+  height: 540px;
+}
+.slider .wrapper .carousel img {
+  margin-top: 40px;
+  display: inline-block;
+  height: 500px;
+  object-fit: cover;
+  width: calc(100% / 3);
+  padding-right: 10px;
+}
+.slider .wrapper .carousel .dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.slider .wrapper .carousel .dragging img {
+  pointer-events: none;
+}
+.slider .wrapper .numof {
+  display: inline-block;
+}
+.slider .wrapper .buttons {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+.slider .wrapper .btn-next {
+  display: inline-block;
+  background-color: #fff;
   width: 100px;
+  border: 0px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.slider .wrapper .btn-next:after {
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 11px;
+  height: 11px;
+  transform: rotate(-45deg);
+  top: 9px;
+  right: 4px;
+}
+.slider .wrapper .btn-next:before {
+  content: '';
+  position: absolute;
+  right: 3px;
+  width: 80px;
+  height: 1px;
+  top: 14px;
+  background: black;
+}
+.slider .wrapper .btn-prev {
+  display: inline-block;
+  background-color: #fff;
+  width: 100px;
+  border: 0px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.slider .wrapper .btn-prev:after {
+  content: '';
+  position: absolute;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  width: 11px;
+  height: 11px;
+  transform: rotate(-45deg);
+  top: 9px;
+  left: 4px;
+}
+.slider .wrapper .btn-prev:before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  width: 80px;
+  height: 1px;
+  top: 14px;
+  background: black;
 }
 .contacts {
   height: 100%;
   width: 1000px;
-  margin: 40px auto;
+  margin: 90px auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -188,17 +288,29 @@ header nav .phone a img {
   margin-left: 35px;
 }
 .contacts .title h2 {
+  position: relative;
   font-family: 'ZenMaruGothicMedium';
   font-weight: 100;
   font-size: 32px;
   margin: 10px 0px;
+}
+.contacts .title h2:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 480px;
+  height: 8px;
+  top: 32px;
+  left: 100px;
+  z-index: -1;
+  background-color: #FDFA25;
 }
 .contacts .title .subtitle {
   margin: 10px 0px;
 }
 .contacts .form-box {
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   display: flex;
   width: 100%;
   height: 270px;
@@ -248,4 +360,102 @@ header nav .phone a img {
 }
 .contacts small a {
   color: black;
+}
+.video-wrapper {
+  height: 100%;
+  width: 1000px;
+  margin: 190px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.video-wrapper h2 {
+  position: relative;
+  font-family: 'ZenMaruGothicMedium';
+  font-weight: 100;
+  font-size: 32px;
+  margin: 10px 0px;
+}
+.video-wrapper h2:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 8px;
+  top: 32px;
+  left: 50px;
+  z-index: -1;
+  background-color: #FDFA25;
+}
+.video-wrapper .video-1 {
+  top: 90px;
+}
+footer {
+  width: 100%;
+  background-color: #eeeeee;
+  padding: 0px;
+  padding: 0px  0px 0px  0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .logo {
+  width: calc(100% / 5);
+  display: flex;
+  align-items: center;
+}
+footer .logo img {
+  width: 205px;
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+footer .col-2 {
+  width: calc(100% / 5);
+  display: flex;
+}
+footer .col-3 {
+  width: calc(100% / 5);
+  display: flex;
+}
+footer .nav {
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: end;
+}
+footer .nav li {
+  font-size: 16px;
+  list-style: none;
+  margin: 0px 20px;
+}
+footer .nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  position: relative;
+  text-transform: uppercase;
+}
+footer .contacts {
+  display: flex;
+  width: calc(100% / 3);
+  align-items: end;
+}
+footer .contacts .phone a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  width: 255px;
+}
+footer .contacts .phone a img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+.hide {
+  display: none!important;
 }

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lion</title>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/cea860928a.js"></script>
+    <script src="https://kit.fontawesome.com/7d65c45025.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
@@ -28,7 +31,7 @@
         </div>
         <div class="text-wrapper">
             <div class="text">
-                <h1>Заголовок про отношение к делу</h1>
+                <h1>Мебельная окмпания LION</h1>
                 <p>Наша компания на рынке уже более 10 лет 
                     Работаем с проектами любого масштаба 
                     Делаем мебель не только для дома, НО и для бизнеса. 
@@ -53,29 +56,39 @@
         
     </div>
     <div class="slider">
-        <div class="about-photo"></div>
-        <div class="btn-appointment-slider">
+        <!-- <div class="about-photo">Наши работы</div> -->
+        <!-- <div class="btn-appointment-slider">
             <button class="btn">Связаться с нами</button>
-        </div>
+        </div> -->
         <div class="full-photo"></div>
-        <div class="all-photo">
-            <img class="photo-mini" src="photo/1.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/2.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/3.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/4.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/5.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/6.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/7.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/8.PNG" alt="Фото1">
-            <img class="photo-mini" src="photo/9.PNG" alt="Фото1">
+        <div class="wrapper">
+            
+            <div class="carousel">
+                <img class="photo-mini" src="photo/1.PNG" alt="Фото" draggable="false" >
+                <img class="photo-mini" src="photo/2.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/3.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/4.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/5.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/6.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/1.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/2.PNG" alt="Фото" draggable="false">
+                <img class="photo-mini" src="photo/3.PNG" alt="Фото" draggable="false">
+            </div>
+            <div class="buttons">
+                <button class="btn-prev"></button>
+                <p class="numof"></p>
+                <button class="btn-next"></button>
+            </div>
+            
+            
         </div>
-        <button class="btn-prev">Пред</button>
-        <button class="btn-next">След</button>
+        
+        
     </div>
     <div class="contacts">
         <div class="title">
             <h2>Оставьте заявку на замер технолога</h2>
-            <div class="subtitle">Мы свяжемся с Вами, договоримся о замере в удобное для Вас время,<br> технолог выполнит замер и подготовим проект Вашей мебели по размеру</div>
+            <div class="subtitle">Мы свяжемся с Вами, договоримся о замере в удобное для Вас время,<br> технолог выполнит замер и подготовим проект Вашей мебели по размерам помещения</div>
         </div>
         <form class="form-box" action="email.php" method="post" id="form-request">
             <div class="input-box">
@@ -88,7 +101,7 @@
             </div>
             <div class="input-box">
                 <input type="text" name="comment" class="item" placeholder=" " id="comment">
-                <label for="comment">Укажите удобное время для связи</label>
+                <label for="comment">Оставьте комментарий, если это необходимо</label>
             </div>
             <div class="button-box">
                 <button class="btn" type="submit">Оставить заявку</button>
@@ -96,6 +109,75 @@
         </form>
         <small>Нажимая на кнопку "Оставить заявку", Вы даете согласие на <a href="#ссылка">обработку персональных данных</a></small>
     </div>
+    <div class="video-wrapper">
+        <div class="about-video">
+            <h2>Немного о нас</h2>
+            <p>Держим высокие стандарты качества</p>
+            <p>Работаем только с качественной фурнитурой</p>
+            <p>Индивидуальный подход к каждому заказчику</p>
+            <p>Другие цепляющие фразы</p>
+        </div>
+        <div class="video-wrap">
+            <video
+            id="my-video"
+            class="video-js video-1"
+            controls
+            preload="auto"
+            width="320"
+            height="585"
+            poster="kichen_video_1.jpg"
+            data-setup="{}"
+      >
+        <source src="video-1.mp4" type="video/mp4" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+        </video>
+        </div>
+        <div class="wideo-wrap">
+            <video
+            id="my-video"
+            class="video-js video-2"
+            controls
+            preload="auto"
+            width="320"
+            height="585"
+            poster="kichen_video_2.jpg"
+            data-setup="{}"
+      >
+        <source src="video-2.mp4" type="video/mp4" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+        </video>
+        </div>
+    
+      <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    </div>
+    <footer>
+            <a href="" class="logo">
+                <img src="logo.png" alt="Lion">
+            </a>
+            <div class="col-2"></div>
+            <div class="col-3"></div>
+            <div class="nav">
+                <li><a href="#block_1">О нас</a></li>
+                <li><a href="#block_2">Проекты</a></li>
+                <li><a href="#block_3">Записаться</a></li>
+            </div>
+            <div class="contacts">
+                <div class=phone><a href="tel:+74951234567"> <img src="phone.png" alt=""> +7 (495) 123-45-67</a></div>
+                <div class=phone><a href="adress@gmail.com"> <img src="email.png" alt=""> adress@gmail.com</a></div>
+            </div>
+    </footer>
     <!-- <a href="admin/admin.html">Админ</a>  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="module" src="main.js"></script>
