@@ -3,7 +3,7 @@ const buttonNext = document.querySelector('.btn-next')
 const photosMini = document.querySelectorAll('.photo-mini')
 const carousel = document.querySelector('.carousel')
 const firstImg = carousel.querySelectorAll('img')[0];
-const thridImg = carousel.querySelectorAll('img')[2];
+// const curPhoto = carousel.querySelectorAll('img')[1];
 const countPhoto = carousel.querySelectorAll('img').length;
 const counterPhoto = document.querySelector('.numof');
 
@@ -15,11 +15,11 @@ let isDragStart = false;
 let prevPageX;
 let prevScrollLeft;
 let positionDiff;
-let firstImgWidth = firstImg.clientWidth + 10;
+let firstImgWidth = firstImg.clientWidth;
 let scrollWidth = carousel.scrollWidth - carousel.clientWidth + 1           // разобраться что за единичка
-
+let curPhoto = 2
 init()
-// counter ()
+counter ()
 
 function showArrow (){
     // if (carousel.scrollLeft == 0) {
@@ -36,24 +36,36 @@ function showArrow (){
     // }
 }
 
-function counter () {
+function counter (next) {
     console.log('Вызов каунтера', countPhoto)
-    counterPhoto.innerHTML = countPhoto.toString()
+    
+    if (next) {
+        curPhoto++
+    } else {
+        curPhoto--
+    } 
+    counterPhoto.innerHTML = `${curPhoto}/${countPhoto.toString()}`
+}
+
+function changeCounter() {
+
 }
 
 function nextPhoto(){
     carousel.scrollLeft += firstImgWidth
+    counter(true)
     setTimeout(() => showArrow(), 100);
 }
 
 function prevPhoto(){
     carousel.scrollLeft -= firstImgWidth
+    counter(false)
     setTimeout(() => showArrow(), 60);
 }
 
 const autoSlide = () => {
     positionDiff = Math.abs(positionDiff);
-    let firstImgWidth = firstImg.clientWidth + 10;
+    let firstImgWidth = firstImg.clientWidth;
     let valDiff = firstImgWidth - positionDiff;
     let startScrollLeft = carousel.scrollLeft
     if(startScrollLeft > prevScrollLeft) {
@@ -107,15 +119,9 @@ carousel.addEventListener('mouseleave', dragStop)
 
 
 function init(){
+    
     // thridImg.style.width = '500px';
     // thridImg.style.height = '500px';
-}
-
-
-
-
-function renderPhoto(){
-
 }
 
 
