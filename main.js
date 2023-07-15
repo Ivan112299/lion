@@ -7,6 +7,9 @@ const firstImg = carousel.querySelectorAll('img')[0];
 const countPhoto = carousel.querySelectorAll('img').length;
 const counterPhoto = document.querySelector('.numof');
 
+const header = document.querySelector('header')
+const logo = document.querySelector('.logo')
+
 buttonNext.addEventListener('click', nextPhoto)
 buttonPrev.addEventListener('click', prevPhoto)
 
@@ -17,9 +20,23 @@ let prevScrollLeft;
 let positionDiff;
 let firstImgWidth = firstImg.clientWidth;
 let scrollWidth = carousel.scrollWidth - carousel.clientWidth + 1           // разобраться что за единичка
-let curPhoto = 2
+let curPhoto = 1
 init()
 counter ()
+
+window.addEventListener('scroll', function() {
+    if (window.screen.width < 600) return;
+    let img = logo.querySelector('img')
+    let a  = window.scrollY
+    if (a > 0) {
+        img.style.width = '255px'
+        // img.classList.add('width-zoom-in')
+        header.style.height = '155px'
+    } else if (a == 0) {
+        img.style.width = '355px'
+        header.style.height = '255px'
+    } 
+  });
 
 function showArrow (){
     // if (carousel.scrollLeft == 0) {
@@ -37,12 +54,26 @@ function showArrow (){
 }
 
 function counter (next) {
-    console.log('Вызов каунтера', countPhoto)
     
-    if (next) {
+
+    if (next && curPhoto < countPhoto) {
+        console.log('лист вправо')
         curPhoto++
-    } else {
+        buttonPrev.classList.remove('disable')
+        // buttonPrev.removeAttribute(disabled)
+        if (curPhoto >= countPhoto) {
+            buttonNext.classList.add('disable')
+            // buttonNext.setAttribute(disabled)
+        }
+    } else if (!next && curPhoto > 1) {
+        console.log('лист влево')
         curPhoto--
+        buttonNext.classList.remove('disable')
+        // buttonNext.removeAttribute(disabled)
+        if (curPhoto <= 1) {
+            buttonPrev.classList.add('disable')
+            // buttonPrev.setAttribute(disabled)
+        }
     } 
     counterPhoto.innerHTML = `${curPhoto}/${countPhoto.toString()}`
 }
@@ -129,29 +160,29 @@ function init(){
 
 
 // отправка формы
-$(document).ready(function () {
-    $("form").submit(function () {
-        // Получение ID формы
-        var formID = $(this).attr('id');
-        // Добавление решётки к имени ID
-        var formNm = $('#' + formID);
-        $.ajax({
-            type: "POST",
-            url: '/send.php',
-            data: formNm.serialize(),
-            beforeSend: function () {
-                // Вывод текста в процессе отправки
-                $(formNm).html('<p style="text-align:center">Отправка...</p>');
-            },
-            success: function (data) {
-                // Вывод текста результата отправки
-                $(formNm).html('<p style="text-align:center">'+data+'</p>');
-            },
-            error: function (jqXHR, text, error) {
-                // Вывод текста ошибки отправки
-                $(formNm).html(error);
-            }
-        });
-        return false;
-    });
-});
+// $(document).ready(function () {
+//     $("form").submit(function () {
+//         // Получение ID формы
+//         var formID = $(this).attr('id');
+//         // Добавление решётки к имени ID
+//         var formNm = $('#' + formID);
+//         $.ajax({
+//             type: "POST",
+//             url: '/send.php',
+//             data: formNm.serialize(),
+//             beforeSend: function () {
+//                 // Вывод текста в процессе отправки
+//                 $(formNm).html('<p style="text-align:center">Отправка...</p>');
+//             },
+//             success: function (data) {
+//                 // Вывод текста результата отправки
+//                 $(formNm).html('<p style="text-align:center">'+data+'</p>');
+//             },
+//             error: function (jqXHR, text, error) {
+//                 // Вывод текста ошибки отправки
+//                 $(formNm).html(error);
+//             }
+//         });
+//         return false;
+//     });
+// });

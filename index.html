@@ -16,22 +16,23 @@
                 <img src="logo.png" alt="Lion">
             </a>
             <menu>
-                <li><a href="#block_1">О нас</a></li>
                 <li><a href="#block_2">Проекты</a></li>
                 <li><a href="#block_3">Записаться</a></li>
+                <li><a href="#block_1">О нас</a></li>
                 <li><a href="#block_4">Партнеры</a></li>
                 <li><a href="#block_5">Контакты</a></li>
             </menu>
-            <div class=phone><a href="tel:+74951234567"> <img src="phone.png" alt=""> +7 (495) 123-45-67</a></div>
+            <div class=phone>
+                <a href="tel:+74951234567"> <img src="phone.png" alt=""> +7 (495) 123-45-67</a></div>
         </nav>
     </header>
-    <div class="about">
+    <div class="about" >
         <div class="image">
             <img src="kichen_1.jpg" alt="Кухня">
         </div>
         <div class="text-wrapper">
             <div class="text">
-                <h1>Мебельная окмпания LION</h1>
+                <h1>Мебельная компания LION</h1>
                 <p>Наша компания на рынке уже более 10 лет 
                     Работаем с проектами любого масштаба 
                     Делаем мебель не только для дома, НО и для бизнеса. 
@@ -47,22 +48,17 @@
                     Озвучиваем реальные сроки и соблюдаем их.
                     <br><br>
                     Репутация компании заработанная годами плодотворной работы</p>
+                    <br>
+                    <div class="btn-appointment">
+                        <button class="btn">Записаться на замер</button>
+                    </div>
             </div>
             <div class="text-fake"></div>
         </div>
-        <div class="btn-appointment">
-            <button class="btn">Записаться на замер</button>
-        </div>
-        
     </div>
-    <div class="slider">
-        <!-- <div class="about-photo">Наши работы</div> -->
-        <!-- <div class="btn-appointment-slider">
-            <button class="btn">Связаться с нами</button>
-        </div> -->
+    <div class="slider" id="block_2">
         <div class="full-photo"></div>
         <div class="wrapper">
-            
             <div class="carousel">
                 <img class="photo-mini" src="photo/1.PNG" alt="Фото" draggable="false" >
                 <img class="photo-mini" src="photo/2.PNG" alt="Фото" draggable="false">
@@ -75,17 +71,13 @@
                 <img class="photo-mini" src="photo/3.PNG" alt="Фото" draggable="false">
             </div>
             <div class="buttons">
-                <button class="btn-prev" disabled></button>
+                <button class="btn-prev" ></button>
                 <p class="numof"></p>
                 <button class="btn-next"></button>
-            </div>
-            
-            
+            </div> 
         </div>
-        
-        
     </div>
-    <div class="contacts">
+    <div class="contacts" id="block_3">
         <div class="title">
             <h2>Оставьте заявку на замер технолога</h2>
             <div class="subtitle">Мы свяжемся с Вами, договоримся о замере в удобное для Вас время,<br> технолог выполнит замер и подготовим проект Вашей мебели по размерам помещения</div>
@@ -109,13 +101,14 @@
         </form>
         <small>Нажимая на кнопку "Оставить заявку", Вы даете согласие на <a href="#ссылка">обработку персональных данных</a></small>
     </div>
-    <div class="video-wrapper">
+    <div class="video-wrapper" id="block_1">
         <div class="about-video">
-            <h2>Немного о нас</h2>
-            <p>Держим высокие стандарты качества</p>
-            <p>Работаем только с качественной фурнитурой</p>
-            <p>Индивидуальный подход к каждому заказчику</p>
-            <p>Другие цепляющие фразы</p>
+            <h2>5 причин заказать мебель у нас</h2>
+            <p><img src="check-mark.png" alt=""> Качество. Мы работаем только с высококачественными материалами и фурнитурой. Даем гарантию 2 года. </p>
+            <p><img src="check-mark.png" alt=""> Имеем колоссальный опыт работы в данной сфере (с 2007г.)</p>
+            <p><img src="check-mark.png" alt=""> Работаем индивидуально с каждым заказчиком. Делаем современный , удобный и продуманный дизайн-проект. </p>
+            <p><img src="check-mark.png" alt=""> Учитываем все индивидуальные особенности при проектировании. </p>
+            <p><img src="check-mark.png" alt=""> Сроки исполнения. Озвучиваем реальные сроки и соблюдаем их.</p>
         </div>
         <div class="video-wrap">
             <video
@@ -138,29 +131,19 @@
         </p>
         </video>
         </div>
-        <div class="wideo-wrap">
-            <video
-            id="my-video"
-            class="video-js video-2"
-            controls
-            preload="auto"
-            width="320"
-            height="585"
-            poster="kichen_video_2.jpg"
-            data-setup="{}"
-      >
-        <source src="video-2.mp4" type="video/mp4" />
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a
-          web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank"
-            >supports HTML5 video</a
-          >
-        </p>
-        </video>
-        </div>
     
       <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    </div>
+    <div class="clients" id="block_4">
+        
+    </div>
+    <div class="map-wrapper" id="block_5">
+        <div class="map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a9414273e5a5d85d840edf48c4e46fa238f83341234c6339874813fb2e195cf&amp;source=constructor" width="100%" height="450" frameborder="0"></iframe>
+        </div>
+        <div class="container">
+
+        </div>
     </div>
     <footer>
             <a href="" class="logo">
@@ -173,7 +156,7 @@
                 <li><a href="#block_2">Проекты</a></li>
                 <li><a href="#block_3">Записаться</a></li>
             </div>
-            <div class="contacts">
+            <div class="contacts-footer">
                 <div class=phone><a href="tel:+74951234567"> <img src="phone.png" alt=""> +7 (495) 123-45-67</a></div>
                 <div class=phone><a href="adress@gmail.com"> <img src="email.png" alt=""> adress@gmail.com</a></div>
             </div>

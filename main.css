@@ -33,14 +33,6 @@
     width: calc(100% / 2) !important;
   }
 }
-@media screen and (max-width: 550px) {
-  body {
-    background-color: #812525;
-  }
-  .carousel img {
-    width: 100%!important;
-  }
-}
 .btn {
   color: black;
   padding: 20px 60px;
@@ -55,6 +47,16 @@
 .btn:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
 }
+.disable {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.width-zoom-in {
+  width: 255px;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #fff;
   padding: 0px;
@@ -63,7 +65,7 @@ body {
 }
 header {
   position: fixed;
-  height: 155px;
+  height: 205px;
   width: 100%;
   background-color: #fff;
   padding: 0px;
@@ -77,9 +79,11 @@ header nav {
   justify-content: space-between;
   margin-left: 5%;
   margin-right: 5%;
+  transition: all 0.5s ease-in-out;
 }
 header nav img {
-  width: 255px;
+  transition: all 0.5s ease-in-out;
+  width: 355px;
   display: flex;
 }
 header nav menu {
@@ -131,18 +135,20 @@ header nav .phone a img {
   padding-top: 5px;
 }
 .about {
-  padding-top: 155px;
+  padding-top: 135px;
   height: 700px;
-  margin: auto 12%;
+  margin: auto 8%;
+  position: relative;
 }
 .about .image img {
   margin-top: 100px;
   right: 12%;
-  width: 1086px;
-  height: 584px;
+  width: 936px;
+  height: 514px;
   z-index: -1;
   position: absolute;
   display: block;
+  right: 0px;
 }
 .about .text-wrapper {
   display: flex;
@@ -177,11 +183,13 @@ header nav .phone a img {
 }
 .about .btn-appointment {
   position: relative;
-  top: -100px;
 }
 .slider {
   height: 600px;
-  margin: 100px 12% 0px;
+  margin: 100px 8% 0px;
+  padding-top: 100px;
+  margin-top: -100px;
+  padding-bottom: 90px;
 }
 .slider .wrapper .carousel {
   margin-top: 40px;
@@ -209,6 +217,7 @@ header nav .phone a img {
 }
 .slider .wrapper .numof {
   display: inline-block;
+  line-height: 0px;
 }
 .slider .wrapper .buttons {
   display: flex;
@@ -275,8 +284,10 @@ header nav .phone a img {
 }
 .contacts {
   height: 100%;
-  width: 1000px;
-  margin: 90px auto;
+  margin: 90px 18% 0px;
+  padding-bottom: 150px;
+  padding-top: 205px;
+  margin-top: -205px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -368,30 +379,45 @@ header nav .phone a img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 135px;
+  margin-top: -135px;
 }
-.video-wrapper h2 {
+.video-wrapper .about-video {
+  padding: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+.video-wrapper .about-video p {
+  font-size: 18px;
+}
+.video-wrapper .about-video p img {
+  display: inline-block;
+  height: 20px;
+}
+.video-wrapper .about-video h2 {
   position: relative;
   font-family: 'ZenMaruGothicMedium';
   font-weight: 100;
   font-size: 32px;
   margin: 10px 0px;
 }
-.video-wrapper h2:after {
+.video-wrapper .about-video h2:after {
   content: '';
   display: block;
   position: absolute;
-  width: 200px;
+  width: 450px;
   height: 8px;
   top: 32px;
   left: 50px;
   z-index: -1;
   background-color: #FDFA25;
 }
-.video-wrapper .video-1 {
-  top: 90px;
-}
 footer {
   width: 100%;
+  height: 150px;
   background-color: #eeeeee;
   padding: 0px;
   padding: 0px  0px 0px  0px;
@@ -423,7 +449,6 @@ footer .nav {
   width: calc(100% / 3);
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: end;
 }
 footer .nav li {
@@ -438,24 +463,193 @@ footer .nav li a {
   position: relative;
   text-transform: uppercase;
 }
-footer .contacts {
+footer .contacts-footer {
   display: flex;
   width: calc(100% / 3);
   align-items: end;
+  flex-direction: column;
 }
-footer .contacts .phone a {
+footer .contacts-footer .phone a {
   display: flex;
   text-decoration: none;
   color: black;
   width: 255px;
 }
-footer .contacts .phone a img {
+footer .contacts-footer .phone a img {
   display: inline-block;
   width: 16px;
   height: 16px;
   padding-right: 10px;
   padding-top: 5px;
 }
+.map-wrapper {
+  height: 450px;
+  margin: 100px 0px 0px;
+  display: block;
+  position: relative;
+  padding-top: 220px;
+  margin-top: -220px;
+}
+.map-wrapper .map {
+  width: 100%;
+  position: absolute;
+  opacity: 0.6;
+}
+.clients {
+  padding-top: 135px;
+  margin-top: -135px;
+}
 .hide {
   display: none!important;
+}
+@media screen and (max-width: 550px) {
+  header {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    margin: 0px;
+  }
+  header nav {
+    margin: 0px 0px 0px 0px!important;
+    flex-direction: column;
+  }
+  header nav menu {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header nav menu li {
+    text-align: center;
+    margin-top: 10px;
+  }
+  header nav menu li a:after {
+    display: none;
+  }
+  header nav .phone a {
+    display: inline;
+  }
+  .about {
+    margin: 0px!important;
+  }
+  .about .text-wrapper {
+    width: 100%;
+    margin: 7% 0px;
+  }
+  .about .text-wrapper .text-fake {
+    display: none;
+  }
+  .about .text-wrapper .text {
+    width: 100%;
+    margin: 0px 3%;
+    text-align: center;
+    align-items: center;
+  }
+  .about .text-wrapper .text h1 {
+    line-height: 40px;
+  }
+  .about .image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 750px;
+    background: url('kichen_video_1.jpg');
+    background-size: cover;
+  }
+  .about .image img {
+    display: none!important;
+  }
+  .slider {
+    margin: 15px;
+    padding: 0px;
+  }
+  .slider .wrapper .carousel img {
+    padding-right: 0px;
+  }
+  .slider .wrapper .buttons {
+    justify-content: center;
+  }
+  .contacts {
+    width: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .contacts .title {
+    margin: auto 5%;
+    width: 90%;
+  }
+  .contacts .title h2 {
+    width: 100%;
+  }
+  .contacts .title h2:after {
+    width: 300px;
+    left: 50px;
+  }
+  .contacts .form-box {
+    margin-top: 0px;
+    height: 100%;
+  }
+  .contacts small {
+    margin: 3% 5%;
+  }
+  .video-wrapper {
+    width: 90%;
+    margin: 20px 3%;
+    flex-direction: column;
+    padding-top: 0px;
+  }
+  .video-wrapper .video-wrapper {
+    margin: auto;
+  }
+  .video-wrapper .about-video {
+    text-align: center;
+    padding: 0px;
+  }
+  .video-wrapper .about-video h2 {
+    padding: 0px;
+  }
+  .video-wrapper .about-video h2::after {
+    width: 60%;
+  }
+  .video-wrapper .video-wrap {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .clients {
+    display: none!important;
+  }
+  .map-wrapper {
+    display: none!important;
+  }
+  footer {
+    height: 350px;
+    flex-direction: column-reverse;
+  }
+  footer .logo {
+    justify-content: center;
+  }
+  footer .logo img {
+    padding: 0px;
+  }
+  footer .nav {
+    align-items: center;
+  }
+  footer .contacts-footer {
+    align-items: center;
+    margin: 20px 0px;
+  }
+  footer .contacts-footer .phone {
+    display: flex;
+    justify-content: center;
+  }
+  footer .contacts-footer .phone a {
+    display: inline-block;
+    text-align: center;
+  }
+  .carousel img {
+    width: 100%!important;
+  }
 }

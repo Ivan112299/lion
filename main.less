@@ -34,6 +34,8 @@
 	src: local('Zen Maru'),
 		url('/fonts/ZenMaruGothic-Black.ttf') format('truetype'),
 }
+
+
 // разобраться с !important
 @media screen and (max-width: 1300px) {
   .carousel {
@@ -42,16 +44,7 @@
     }
   }
 }
-@media screen and (max-width: 550px) {
-  body {
-    background-color: #812525;
-  }
-  .carousel {
-    img {
-      width: 100%!important;
-    }
-  }
-}
+
 
 
 @base-white: #fff;
@@ -73,16 +66,30 @@
   }
 }
 
+.disable {
+  opacity: .3;
+  pointer-events:none;
+}
+
+.width-zoom-in {
+  width: 255px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: @base-white;
   padding: 0px;
   margin: 0px;
 	font-family: 'ZenMaruGothicRegular';
-	
+
 }
+
 header {
+  
   position: fixed;
-  height: 155px;
+  height: 205px;
   width: 100%;
   background-color: @base-white;
   padding: 0px;
@@ -95,8 +102,10 @@ header {
     justify-content: space-between;
     margin-left: 5%;
     margin-right: 5%;
+    transition: all 0.5s ease-in-out;
     img {
-      width: 255px;
+      transition: all 0.5s ease-in-out;
+      width: 355px;             // уменьшить в самом конце
       display: flex;
     }
     menu {
@@ -152,19 +161,21 @@ header {
 
 .about {
 	// display: none;			
-  padding-top: 155px;
+  padding-top: 135px;
   height: 700px;
-  margin: auto 12%;
+  margin: auto 8%;
+  position: relative;
   // background-color: #a28383;
   .image {
     img {
       margin-top: 100px;
       right: 12%;
-      width: 1086px;
-      height: 584px;
+      width: 936px;
+      height: 514px;
       z-index: -1;
       position: absolute;
       display: block;
+      right: 0px;
     }
   }
   .text-wrapper {
@@ -200,14 +211,16 @@ header {
   }
   .btn-appointment {
     position: relative;
-    top: -100px;
   }
 }
 
 .slider {
 	// background-color: rgb(218, 161, 85);
 	height: 600px;
-	margin: 100px 12% 0px;
+	margin: 100px 8% 0px;
+  padding-top: 100px;
+	margin-top: -100px;
+  padding-bottom: 90px;
   // display: none;
   
   .wrapper {
@@ -237,6 +250,7 @@ header {
     }
     .numof {
       display: inline-block;
+      line-height: 0px;
     }
     .buttons {
       display: flex;
@@ -314,12 +328,13 @@ header {
   }
 }
 
-
 .contacts {
   // display: none;
   height: 100%;
-  width: 1000px;
-  margin: 90px auto;
+  margin: 90px 18% 0px;
+  padding-bottom: 150px;
+  padding-top: 205px;
+	margin-top: -205px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -412,34 +427,63 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  // .video-wrap {
-  //   // margin: 10px
-  // }
-  h2 {
+  padding-top: 135px;
+	margin-top: -135px;
+  .about-video {
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
     position: relative;
-    font-family: 'ZenMaruGothicMedium';
-    font-weight: 100;
-    font-size: 32px;
-    margin: 10px 0px;
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 200px;
-      height: 8px;
-      top: 32px;
-      left: 50px;
-      z-index: -1;
-      background-color: @base-yellow;
+    // &:before {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   left: 0px;
+    //   top: 0px;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 1;
+    //   opacity: 0.05;
+    //   background-image: url('bg-lion.png');
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   background-size: cover;
+    // }
+    p {
+      font-size: 18px;
+      img {
+        display: inline-block;
+        height: 20px;
+      }
+    }
+    h2 {
+      position: relative;
+      font-family: 'ZenMaruGothicMedium';
+      font-weight: 100;
+      font-size: 32px;
+      margin: 10px 0px;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 450px;
+        height: 8px;
+        top: 32px;
+        left: 50px;
+        z-index: -1;
+        background-color: @base-yellow;
+      }
     }
   }
   .video-1 {
-    top:90px;
   }
 }
 
 footer {
   width: 100%;
+  height: 150px;
   background-color: #eeeeee;
   padding: 0px;
   padding: 0px  0px 0px  0px;
@@ -470,7 +514,6 @@ footer {
     width: calc(100% /3);
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: end;
     li {
       font-size: 16px;
@@ -485,10 +528,11 @@ footer {
 			}
     }
   }
-  .contacts {
+  .contacts-footer {
     display: flex;
     width: calc(100% /3);
     align-items: end;
+    flex-direction: column;
     .phone a {
 			display: flex;
 			text-decoration: none;
@@ -505,7 +549,197 @@ footer {
   }
 }
 
+.map-wrapper {
+  height: 450px;
+	margin: 100px 0px 0px;
+  display: block;
+  position: relative;
+  padding-top: 220px;
+	margin-top: -220px;
+  .map {
+    width: 100%;
+    position: absolute;
+    opacity: .6;
+
+  }
+}
+
+.clients {
+  padding-top: 135px;
+	margin-top: -135px;
+}
+
 
 .hide { 
   display: none!important;
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    width: 100%;
+    height: 100%;
+    background-color:@base-white;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    margin: 0px;
+    nav {
+      margin: 0px 0px 0px 0px!important;
+      flex-direction: column;
+      menu {
+        flex-direction: column;
+        justify-content: space-between;
+        li {
+          text-align: center;
+          margin-top: 10px;
+          a {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+      .phone {
+        a {
+          display: inline;
+        }
+      }
+    }
+    
+  }
+  .about {
+    margin: 0px!important;
+    .text-wrapper {
+      width: 100%;
+      margin: 7% 0px;
+      .text-fake {
+        display: none;
+      }
+      .text {
+        width: 100%;
+        margin: 0px 3%;
+        text-align: center;
+        align-items: center;
+        h1 {
+          line-height: 40px;
+        }
+      }
+    }
+    .image {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 750px;
+      background: url('kichen_video_1.jpg');
+      background-size: cover;
+      img {
+        display: none!important;
+      }
+    }
+  }
+  .slider {
+    margin: 15px;
+    padding: 0px;
+    .wrapper {
+      .carousel {
+        img {
+          padding-right: 0px;
+        }
+      }
+      .buttons {
+        justify-content: center;
+      }
+    }
+  }
+  .contacts {
+    width: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    .title {
+      // padding: 0px 15px;
+      margin: auto 5%;
+      width: 90%;
+      h2 {
+        width: 100%;
+        &:after {
+          width: 300px;
+          left: 50px;
+        }
+      }
+    }
+    .form-box {
+      margin-top: 0px;
+      height: 100%;
+    }
+    small {
+      margin: 3% 5%;
+    }
+  }
+  .video-wrapper {
+    width: 90%;
+    margin: 20px 3%;
+    flex-direction: column;
+    padding-top: 0px;
+    .video-wrapper {
+      margin: auto;
+    }
+    .about-video {
+      text-align: center;
+      padding: 0px;
+      h2{
+        padding: 0px;
+        &::after {
+          width: 60%;
+        }
+      }
+    }
+    .video-wrap {
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .clients {
+    display: none!important;
+  }
+  .map-wrapper {
+    display: none!important;
+
+  }
+  footer {
+    height: 350px;
+    flex-direction: column-reverse;
+    .logo {
+      justify-content: center;
+      img {
+        padding: 0px;
+      }
+    }
+    .nav {
+      align-items: center;
+    }
+    .contacts-footer {
+      align-items: center;
+      margin: 20px 0px;
+      .phone{
+        display: flex;
+        justify-content: center;
+        a {
+          display: inline-block;
+          text-align: center;  
+        }
+      }
+    }
+    
+  }
+  
+
+
+
+  .carousel {
+    img {
+      width: 100%!important;
+    }
+  }
 }
