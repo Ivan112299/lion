@@ -93,57 +93,57 @@ function prevPhoto(){
     setTimeout(() => showArrow(), 60);
 }
 
-const autoSlide = () => {
-    positionDiff = Math.abs(positionDiff);
-    let firstImgWidth = firstImg.clientWidth;
-    let valDiff = firstImgWidth - positionDiff;
-    let startScrollLeft = carousel.scrollLeft
-    if(startScrollLeft > prevScrollLeft) {
-        console.log('скролим вправо')
-        carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDiff :  -positionDiff
+// const autoSlide = () => {
+//     positionDiff = Math.abs(positionDiff);
+//     let firstImgWidth = firstImg.clientWidth;
+//     let valDiff = firstImgWidth - positionDiff;
+//     let startScrollLeft = carousel.scrollLeft
+//     if(startScrollLeft > prevScrollLeft) {
+//         console.log('скролим вправо')
+//         carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDiff :  -positionDiff
 
-    }
-    if(startScrollLeft < prevScrollLeft) {
-        console.log('скролим влево')
-        carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDiff :  -positionDiff
-    }
+//     }
+//     if(startScrollLeft < prevScrollLeft) {
+//         console.log('скролим влево')
+//         carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDiff :  -positionDiff
+//     }
 
-}
-const dragStart = (e) => {
-    console.log('вызов dragStart')
-    // обновляю переменные при старте скролла
-    isDragStart = true;
-    prevPageX = e.pageX || e.touches[0].pageX;
-    prevScrollLeft = carousel.scrollLeft
+// }
+// const dragStart = (e) => {
+//     console.log('вызов dragStart')
+//     // обновляю переменные при старте скролла
+//     isDragStart = true;
+//     prevPageX = e.pageX || e.touches[0].pageX;
+//     prevScrollLeft = carousel.scrollLeft
 
-}
-const dragStop = () => {
-    if(!isDragStart) return
-    console.log('вызов dragStop')
-    isDragStart = false;
-    carousel.classList.add('dragging')
-    // showArrow ()
-    autoSlide()
-}
-function drag(e){
-    if(!isDragStart) return;
-    console.log('вызов drag')
-    e.preventDefault();
-    carousel.classList.add('dragging')
+// }
+// const dragStop = () => {
+//     if(!isDragStart) return
+//     console.log('вызов dragStop')
+//     isDragStart = false;
+//     carousel.classList.add('dragging')
+//     // showArrow ()
+//     autoSlide()
+// }
+// function drag(e){
+//     if(!isDragStart) return;
+//     console.log('вызов drag')
+//     e.preventDefault();
+//     carousel.classList.add('dragging')
     
-    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX
-    carousel.scrollLeft = prevScrollLeft - positionDiff
+//     positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX
+//     carousel.scrollLeft = prevScrollLeft - positionDiff
    
-}
-carousel.addEventListener('mousemove', drag)
-carousel.addEventListener('touchmove', drag)
+// }
+// carousel.addEventListener('mousemove', drag)
+// carousel.addEventListener('touchmove', drag)
 
-carousel.addEventListener('mousedown', dragStart)
-carousel.addEventListener('touchstart', dragStart)
+// carousel.addEventListener('mousedown', dragStart)
+// carousel.addEventListener('touchstart', dragStart)
 
-carousel.addEventListener('mouseup', dragStop)
-carousel.addEventListener('touchend', dragStop)
-carousel.addEventListener('mouseleave', dragStop)
+// carousel.addEventListener('mouseup', dragStop)
+// carousel.addEventListener('touchend', dragStop)
+// carousel.addEventListener('mouseleave', dragStop)
 
 
 
@@ -159,29 +159,29 @@ function init(){
 
 
 // отправка формы
-// $(document).ready(function () {
-//     $("form").submit(function () {
-//         // Получение ID формы
-//         var formID = $(this).attr('id');
-//         // Добавление решётки к имени ID
-//         var formNm = $('#' + formID);
-//         $.ajax({
-//             type: "POST",
-//             url: '/send.php',
-//             data: formNm.serialize(),
-//             beforeSend: function () {
-//                 // Вывод текста в процессе отправки
-//                 $(formNm).html('<p style="text-align:center">Отправка...</p>');
-//             },
-//             success: function (data) {
-//                 // Вывод текста результата отправки
-//                 $(formNm).html('<p style="text-align:center">'+data+'</p>');
-//             },
-//             error: function (jqXHR, text, error) {
-//                 // Вывод текста ошибки отправки
-//                 $(formNm).html(error);
-//             }
-//         });
-//         return false;
-//     });
-// });
+$(document).ready(function () {
+    $("form").submit(function () {
+        // Получение ID формы
+        var formID = $(this).attr('id');
+        // Добавление решётки к имени ID
+        var formNm = $('#' + formID);
+        $.ajax({
+            type: "POST",
+            url: '/send.php',
+            data: formNm.serialize(),
+            beforeSend: function () {
+                // Вывод текста в процессе отправки
+                $(formNm).html('<p style="text-align:center">Отправка...</p>');
+            },
+            success: function (data) {
+                // Вывод текста результата отправки
+                $(formNm).html('<p style="text-align:center">'+data+'</p>');
+            },
+            error: function (jqXHR, text, error) {
+                // Вывод текста ошибки отправки
+                $(formNm).html(error);
+            }
+        });
+        return false;
+    });
+});
