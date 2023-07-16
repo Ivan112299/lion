@@ -30,11 +30,10 @@ window.addEventListener('scroll', function() {
     let a  = window.scrollY
     if (a > 0) {
         img.style.width = '255px'
-        // img.classList.add('width-zoom-in')
         header.style.height = '155px'
     } else if (a == 0) {
         img.style.width = '355px'
-        header.style.height = '255px'
+        header.style.height = '205px'
     } 
   });
 

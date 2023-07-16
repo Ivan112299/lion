@@ -33,6 +33,21 @@
     width: calc(100% / 2) !important;
   }
 }
+.btn-in-head {
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 20px 60px;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-in-head:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
+}
 .btn {
   color: black;
   padding: 20px 60px;
@@ -77,8 +92,7 @@ header nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: auto 8%;
   transition: all 0.5s ease-in-out;
 }
 header nav img {
@@ -122,12 +136,12 @@ header nav menu li a:hover::after {
   visibility: visible;
 }
 header nav .phone a {
-  display: flex;
+  display: inline;
   text-decoration: none;
   color: black;
   width: 255px;
 }
-header nav .phone a img {
+header nav .phone img {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -372,10 +386,38 @@ header nav .phone a img {
 .contacts small a {
   color: black;
 }
+.clients {
+  display: flex;
+  height: 100%;
+  padding-top: 135px;
+  margin-top: -135px;
+  margin-left: 8%;
+  margin-right: 8%;
+  position: relative;
+  flex-direction: column;
+}
+.clients .title h2 {
+  width: 100%;
+  text-align: center;
+}
+.clients .brands {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
+.clients .brands:hover {
+  filter: grayscale(0%);
+}
+.clients .brands img {
+  display: flex;
+  height: 150px;
+}
 .video-wrapper {
   height: 100%;
-  width: 1000px;
-  margin: 190px auto;
+  margin: 130px 18% 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -384,6 +426,7 @@ header nav .phone a img {
 }
 .video-wrapper .about-video {
   padding: 20px;
+  padding-left: 180px;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -483,21 +526,60 @@ footer .contacts-footer .phone a img {
   padding-top: 5px;
 }
 .map-wrapper {
-  height: 450px;
-  margin: 100px 0px 0px;
+  height: 550px;
+  margin: 200px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 8% 20px;
+}
+.map-wrapper .title {
+  display: none!important;
+}
+.map-wrapper .map-full-hd {
+  display: flex;
+  flex-grow: 1;
+}
+.map-wrapper .map-mob {
+  display: none;
+}
+.map-wrapper .adress-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+}
+.map-wrapper .adress-wrapper .attention {
+  width: 90%;
+  margin: 0px 10% 0px 0px;
+  height: 130px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
+  font-size: 16px;
+  line-height: 20px;
+  border-left: 2px solid #FDFA25;
+  border-bottom: 2px solid #FDFA25;
+  box-shadow: 3px -3px 2px rgba(0, 0, 0, 0.1);
+}
+.map-wrapper .adress-wrapper .attention p {
+  width: 80%;
+  font-size: 18px;
+  margin: 20px 10% 0px;
+}
+.map-wrapper .adress-wrapper .adress {
+  flex-grow: 1;
+  padding-top: 40px;
+}
+.map-wrapper .adress-wrapper .adress a {
+  color: black;
+  text-decoration: none;
   display: block;
-  position: relative;
-  padding-top: 220px;
-  margin-top: -220px;
+  padding-top: 10px;
+  font-size: 18px;
 }
-.map-wrapper .map {
-  width: 100%;
-  position: absolute;
-  opacity: 0.6;
-}
-.clients {
-  padding-top: 135px;
-  margin-top: -135px;
+.map-wrapper .adress-wrapper .adress a img {
+  height: 16px;
+  margin-right: 10px;
 }
 .hide {
   display: none!important;
@@ -516,6 +598,9 @@ footer .contacts-footer .phone a img {
     margin: 0px 0px 0px 0px!important;
     flex-direction: column;
   }
+  header nav .logo img {
+    width: 255px;
+  }
   header nav menu {
     flex-direction: column;
     justify-content: space-between;
@@ -531,6 +616,7 @@ footer .contacts-footer .phone a img {
     display: inline;
   }
   .about {
+    padding-top: 30px;
     margin: 0px!important;
   }
   .about .text-wrapper {
@@ -597,7 +683,7 @@ footer .contacts-footer .phone a img {
   .video-wrapper {
     width: 90%;
     margin: 20px 3%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-top: 0px;
   }
   .video-wrapper .video-wrapper {
@@ -619,10 +705,44 @@ footer .contacts-footer .phone a img {
     justify-content: center;
   }
   .clients {
-    display: none!important;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .clients .brands {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .clients .brands img {
+    height: 100%;
+    width: 45%;
   }
   .map-wrapper {
-    display: none!important;
+    flex-direction: column;
+    align-items: center;
+    height: 1050px;
+    margin: 20px 3%;
+  }
+  .map-wrapper .adress-wrapper {
+    width: 100%;
+  }
+  .map-wrapper .adress-wrapper .attention {
+    width: 90%;
+    margin: 0px 5%;
+  }
+  .map-wrapper .adress-wrapper .adress {
+    width: 90%;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+  }
+  .map-wrapper .map-full-hd {
+    display: none;
+  }
+  .map-wrapper .map-mob {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
   }
   footer {
     height: 350px;

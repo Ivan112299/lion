@@ -51,6 +51,22 @@
 @base-black: black;
 @base-yellow: #FDFA25;
 
+.btn-in-head {
+  text-transform: uppercase;
+  color: @base-black;
+  text-decoration: none;
+  background-color: @base-white;
+  border: 1px solid @base-black;
+  padding: 20px 60px;
+  font-size: 16px;
+  transition: .3s;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1),-3px -3px 10px rgba(0, 0, 0, 0.1) ;
+  }
+}
+
 .btn {
   color: @base-black;
   padding: 20px 60px;
@@ -100,8 +116,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: auto 8%;
     transition: all 0.5s ease-in-out;
     img {
       transition: all 0.5s ease-in-out;
@@ -143,11 +158,13 @@ header {
 				}
       }
     }
-    .phone a {
-			display: flex;
-			text-decoration: none;
-			color: @base-black;
-      width: 255px;
+    .phone {
+      a {
+        display: inline;
+        text-decoration: none;
+        color: @base-black;
+        width: 255px;
+      }
       img{
         display: inline-block;
         width: 16px;
@@ -419,11 +436,41 @@ header {
     }
   }
 }
-
+.clients {
+  display: flex;
+  height: 100%;
+  padding-top: 135px;
+	margin-top: -135px;
+  margin-left:  8%;
+  margin-right:  8%;
+  position: relative;
+  flex-direction: column;
+  .title {
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .brands {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    filter: grayscale(100%);
+    transition: .5s;
+    &:hover {
+      filter: grayscale(0%);
+    }
+    img {
+      display: flex;
+      height: 150px;
+    }
+  }
+  
+}
 .video-wrapper {
   height: 100%;
-  width: 1000px;
-  margin: 190px auto;
+  margin: 130px 18% 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -431,6 +478,7 @@ header {
 	margin-top: -135px;
   .about-video {
     padding: 20px;
+    padding-left: 180px;
     display: flex;
     align-items: start;
     justify-content: space-between;
@@ -550,29 +598,74 @@ footer {
 }
 
 .map-wrapper {
-  height: 450px;
-	margin: 100px 0px 0px;
-  display: block;
-  position: relative;
-  padding-top: 220px;
-	margin-top: -220px;
-  .map {
-    width: 100%;
-    position: absolute;
-    opacity: .6;
+  height: 550px;
+	margin: 200px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 8% 20px;
+  // padding-top: 220px;
+	// margin-top: -220px;
+  .title {
+    display: none!important;
+  }
+  .map-full-hd {
+    display: flex;
+    flex-grow: 1;
+   
+  }
+  .map-mob {
+    display: none;
+  }
+  .adress-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    .attention {
+      width: 90%;
+      margin: 0px 10% 0px 0px;
+      height: 130px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(2px);
+      font-size: 16px;
+      line-height: 20px; 
+      border-left: 2px solid @base-yellow;
+      border-bottom: 2px solid @base-yellow;
+      box-shadow: 3px -3px 2px rgba(0, 0, 0, 0.1);
+      p {
+        width: 80%;
+        font-size: 18px;
+        margin: 20px 10% 0px;
+      }
+    }
+    .adress {
+      flex-grow: 1;
+      padding-top: 40px;
+      a {
+        color: @base-black;
+        text-decoration: none;
+        display: block;
+        padding-top: 10px;
+        font-size: 18px;
+        img {
+          height: 16px;
+          margin-right: 10px;
+        }
+      }
+      
 
+    }
   }
 }
 
-.clients {
-  padding-top: 135px;
-	margin-top: -135px;
-}
 
 
 .hide { 
   display: none!important;
 }
+
+
 
 @media screen and (max-width: 550px) {
   header {
@@ -586,6 +679,11 @@ footer {
     nav {
       margin: 0px 0px 0px 0px!important;
       flex-direction: column;
+      .logo {
+        img {
+          width: 255px;
+        }
+      }
       menu {
         flex-direction: column;
         justify-content: space-between;
@@ -608,6 +706,7 @@ footer {
     
   }
   .about {
+    padding-top: 30px;
     margin: 0px!important;
     .text-wrapper {
       width: 100%;
@@ -679,7 +778,7 @@ footer {
   .video-wrapper {
     width: 90%;
     margin: 20px 3%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-top: 0px;
     .video-wrapper {
       margin: auto;
@@ -701,11 +800,44 @@ footer {
     }
   }
   .clients {
-    display: none!important;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .brands {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      img{ 
+        height: 100%;
+        width: 45%;
+      }
+    }
   }
   .map-wrapper {
-    display: none!important;
-
+    flex-direction: column;
+    align-items: center;
+    height: 1050px;
+    margin: 20px 3%;
+    .adress-wrapper {
+      width: 100%;
+      .attention {
+        width: 90%;
+        margin: 0px 5%;
+      }
+      .adress {
+        width: 90%;
+        text-align: center;
+        padding: 20px 0px 20px 0px;
+      }
+    }
+    .map-full-hd {
+      display: none;
+    }
+    .map-mob {
+      display: flex;
+      flex-grow: 1;
+      width: 100%;
+    }
   }
   footer {
     height: 350px;
@@ -733,13 +865,17 @@ footer {
     }
     
   }
-  
-
-
-
   .carousel {
     img {
       width: 100%!important;
     }
   }
 }
+// @media screen and (max-width: 1550px) {
+//   .map-laptop {
+//     display: block!important;
+//   }
+//   .map-full-hd {
+//     display: none;
+//   }
+// }
