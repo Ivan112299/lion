@@ -2,31 +2,31 @@
   font-family: 'ZenMaruGothicLight';
   font-style: normal;
   font-weight: 300;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Light.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicRegular';
   font-style: normal;
   font-weight: 400;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Regular.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicMedium';
   font-style: normal;
   font-weight: 500;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Medium.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicBold';
   font-style: normal;
   font-weight: 600;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicBlack';
   font-style: normal;
   font-weight: 700;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Black.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Black.ttf') format('truetype');
 }
 @media screen and (max-width: 1300px) {
   .carousel img {
