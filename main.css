@@ -107,7 +107,7 @@ header nav menu {
 header nav menu li {
   font-size: 16px;
   list-style: none;
-  margin: 0px 20px;
+  margin: 0px 15px;
 }
 header nav menu li a {
   text-decoration: none;
@@ -390,8 +390,6 @@ header nav .phone img {
 .clients {
   display: flex;
   height: 100%;
-  padding-top: 135px;
-  margin-top: -135px;
   margin-left: 8%;
   margin-right: 8%;
   position: relative;
@@ -707,7 +705,6 @@ footer .contacts-footer .phone a img {
   }
   .clients {
     height: 100%;
-    padding-top: 170px;
     padding-bottom: 20px;
   }
   .clients .brands {
@@ -722,7 +719,7 @@ footer .contacts-footer .phone a img {
   .map-wrapper {
     flex-direction: column;
     align-items: center;
-    height: 1050px;
+    height: 820px;
     margin: 20px 3%;
   }
   .map-wrapper .adress-wrapper {
@@ -743,6 +740,7 @@ footer .contacts-footer .phone a img {
   .map-wrapper .map-mob {
     display: flex;
     flex-grow: 1;
+    justify-content: center;
     width: 100%;
   }
   footer {
@@ -772,5 +770,10 @@ footer .contacts-footer .phone a img {
   }
   .carousel img {
     width: 100%!important;
+  }
+}
+@media screen and (max-width: 137px) {
+  header .logo img {
+    width: 305px!important;
   }
 }

@@ -13,6 +13,8 @@ const logo = document.querySelector('.logo')
 buttonNext.addEventListener('click', nextPhoto)
 buttonPrev.addEventListener('click', prevPhoto)
 
+let currentScroll = 0;
+
 console.log('скролл на ините', carousel.scrollLeft)
 let isDragStart = false;
 let prevPageX;
@@ -53,25 +55,20 @@ function showArrow (){
 }
 
 function counter (next) {
-    
-
     if (next && curPhoto < countPhoto) {
         console.log('лист вправо')
         curPhoto++
         buttonPrev.classList.remove('disable')
-        // buttonPrev.removeAttribute(disabled)
         if (curPhoto >= countPhoto) {
             buttonNext.classList.add('disable')
-            // buttonNext.setAttribute(disabled)
+            
         }
     } else if (!next && curPhoto > 1) {
         console.log('лист влево')
         curPhoto--
         buttonNext.classList.remove('disable')
-        // buttonNext.removeAttribute(disabled)
         if (curPhoto <= 1) {
             buttonPrev.classList.add('disable')
-            // buttonPrev.setAttribute(disabled)
         }
     } 
     counterPhoto.innerHTML = `${curPhoto}/${countPhoto.toString()}`
@@ -84,13 +81,27 @@ function changeCounter() {
 function nextPhoto(){
     carousel.scrollLeft += firstImgWidth
     counter(true)
-    setTimeout(() => showArrow(), 100);
+
+    // дизейблим кнопки на врем яскролла
+    buttonNext.classList.add('disable')
+    buttonPrev.classList.add('disable')
+    setTimeout(() => {
+        buttonNext.classList.remove('disable')
+        buttonPrev.classList.remove('disable')
+    }, 400);
 }
 
 function prevPhoto(){
     carousel.scrollLeft -= firstImgWidth
     counter(false)
-    setTimeout(() => showArrow(), 60);
+
+    // дизейблим кнопки на врем яскролла
+    buttonNext.classList.add('disable')
+    buttonPrev.classList.add('disable')
+    setTimeout(() => {
+        buttonNext.classList.remove('disable')
+        buttonPrev.classList.remove('disable')
+    }, 400);
 }
 
 // const autoSlide = () => {
