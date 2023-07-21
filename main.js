@@ -1,9 +1,10 @@
 const buttonPrev = document.querySelector('.btn-prev')
 const buttonNext = document.querySelector('.btn-next')
+
 const photosMini = document.querySelectorAll('.photo-mini')
+
 const carousel = document.querySelector('.carousel')
 const firstImg = carousel.querySelectorAll('img')[0];
-// const curPhoto = carousel.querySelectorAll('img')[1];
 const countPhoto = carousel.querySelectorAll('img').length;
 const counterPhoto = document.querySelector('.numof');
 const inputPhone = document.querySelector('.input-phone')
@@ -14,13 +15,36 @@ const logo = document.querySelector('.logo')
 buttonNext.addEventListener('click', nextPhoto)
 buttonPrev.addEventListener('click', prevPhoto)
 
+photosMini.forEach(item => {
+    item.addEventListener('click', (e) => {
+        const containerPrev = document.querySelector('.preview')
+        const closePrevBtn = document.querySelector('.btn-close-prev')
+        const currentPhotoUrl = e.target.getAttribute('src')
+        const viewPhoto = containerPrev.querySelector('img')
+        containerPrev.classList.remove('hide')
+
+        viewPhoto.setAttribute('src', currentPhotoUrl)
+        console.log('currentPhoto', currentPhotoUrl)
+        console.log('viewPhoto', viewPhoto)
+        viewPhoto.addEventListener('click', (e) => {
+            e.stopPropagation()         //отключаю всплытие
+        })
+        containerPrev.addEventListener('click', () => {
+            containerPrev.classList.add('hide')
+        })
+        closePrevBtn.addEventListener('click', () => {
+            containerPrev.classList.add('hide')
+        })
+
+    })
+})
+
 inputPhone.addEventListener('click', () => {
     inputPhone.value = '+7'
 })
 
 let currentScroll = 0;
 
-console.log('скролл на ините', carousel.scrollLeft)
 let isDragStart = false;
 let prevPageX;
 let prevScrollLeft;

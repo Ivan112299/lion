@@ -28,6 +28,11 @@
   font-weight: 700;
   src: local('Zen Maru'), url('fonts/ZenMaruGothic-Black.ttf') format('truetype');
 }
+@media screen and (max-width: 1300px) {
+  .carousel img {
+    width: calc(100% / 2) !important;
+  }
+}
 .btn-in-head {
   text-transform: uppercase;
   color: black;
@@ -196,6 +201,39 @@ header nav .phone img {
 }
 .about .btn-appointment {
   position: relative;
+}
+.preview {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  z-index: 1001;
+}
+.preview .btn-close-prev {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  flex-direction: column;
+  margin: auto;
+}
+.preview .photo-prev {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin: auto;
+  height: 88%;
+}
+.preview .photo-prev img {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #fff;
+  object-fit: contain;
 }
 .slider {
   height: 600px;
@@ -775,10 +813,5 @@ footer .contacts-footer .phone a img {
 @media screen and (max-width: 137px) {
   header .logo img {
     width: 305px !important;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .carousel img {
-    width: calc(100% / 2) !important;
   }
 }
