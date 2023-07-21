@@ -2,44 +2,51 @@
   font-family: 'ZenMaruGothicLight';
   font-style: normal;
   font-weight: 300;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Light.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicRegular';
   font-style: normal;
   font-weight: 400;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Regular.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicMedium';
   font-style: normal;
   font-weight: 500;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Medium.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicBold';
   font-style: normal;
   font-weight: 600;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'ZenMaruGothicBlack';
   font-style: normal;
   font-weight: 700;
-  src: local('Zen Maru'), url('/fonts/ZenMaruGothic-Black.ttf') format('truetype');
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Black.ttf') format('truetype');
 }
 @media screen and (max-width: 1300px) {
   .carousel img {
     width: calc(100% / 2) !important;
   }
 }
-@media screen and (max-width: 550px) {
-  body {
-    background-color: #812525;
-  }
-  .carousel img {
-    width: 100%!important;
-  }
+.btn-in-head {
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 20px 60px;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-in-head:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
 }
 .btn {
   color: black;
@@ -55,6 +62,16 @@
 .btn:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
 }
+.disable {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.width-zoom-in {
+  width: 255px;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #fff;
   padding: 0px;
@@ -63,7 +80,7 @@ body {
 }
 header {
   position: fixed;
-  height: 155px;
+  height: 205px;
   width: 100%;
   background-color: #fff;
   padding: 0px;
@@ -75,11 +92,12 @@ header nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: auto 8%;
+  transition: all 0.5s ease-in-out;
 }
 header nav img {
-  width: 255px;
+  transition: all 0.5s ease-in-out;
+  width: 355px;
   display: flex;
 }
 header nav menu {
@@ -89,7 +107,7 @@ header nav menu {
 header nav menu li {
   font-size: 16px;
   list-style: none;
-  margin: 0px 20px;
+  margin: 0px 15px;
 }
 header nav menu li a {
   text-decoration: none;
@@ -118,12 +136,12 @@ header nav menu li a:hover::after {
   visibility: visible;
 }
 header nav .phone a {
-  display: flex;
+  display: inline;
   text-decoration: none;
   color: black;
   width: 255px;
 }
-header nav .phone a img {
+header nav .phone img {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -131,18 +149,20 @@ header nav .phone a img {
   padding-top: 5px;
 }
 .about {
-  padding-top: 155px;
+  padding-top: 135px;
   height: 700px;
-  margin: auto 12%;
+  margin: auto 8%;
+  position: relative;
 }
 .about .image img {
   margin-top: 100px;
   right: 12%;
-  width: 1086px;
-  height: 584px;
+  width: 936px;
+  height: 514px;
   z-index: -1;
   position: absolute;
   display: block;
+  right: 0px;
 }
 .about .text-wrapper {
   display: flex;
@@ -161,6 +181,7 @@ header nav .phone a img {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   padding: 15px;
   line-height: 20px;
   border-left: 2px solid #FDFA25;
@@ -177,11 +198,13 @@ header nav .phone a img {
 }
 .about .btn-appointment {
   position: relative;
-  top: -100px;
 }
 .slider {
   height: 600px;
-  margin: 100px 12% 0px;
+  margin: 100px 8% 0px;
+  padding-top: 100px;
+  margin-top: -100px;
+  padding-bottom: 90px;
 }
 .slider .wrapper .carousel {
   margin-top: 40px;
@@ -209,6 +232,7 @@ header nav .phone a img {
 }
 .slider .wrapper .numof {
   display: inline-block;
+  line-height: 0px;
 }
 .slider .wrapper .buttons {
   display: flex;
@@ -275,8 +299,10 @@ header nav .phone a img {
 }
 .contacts {
   height: 100%;
-  width: 1000px;
-  margin: 90px auto;
+  margin: 90px 18% 0px;
+  padding-bottom: 150px;
+  padding-top: 205px;
+  margin-top: -205px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -361,30 +387,57 @@ header nav .phone a img {
 .contacts small a {
   color: black;
 }
+.clients {
+  display: flex;
+  height: 100%;
+  margin-left: 8%;
+  margin-right: 8%;
+  position: relative;
+  flex-direction: column;
+}
+.clients .title h2 {
+  width: 100%;
+  text-align: center;
+}
+.clients .brands {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
+.clients .brands:hover {
+  filter: grayscale(0%);
+}
+.clients .brands img {
+  display: flex;
+  height: 150px;
+}
 .video-wrapper {
   height: 100%;
-  width: 1000px;
+  margin: 130px 18% 40px;
   display: flex;
-  margin: 190px auto;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 135px;
+  margin-top: -135px;
 }
 .video-wrapper .about-video {
-  width: calc(1/3*100% - (1 - 1/3)*15px);
+  padding: 20px;
+  padding-left: 180px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
 }
 .video-wrapper .about-video p {
-  line-height: 28px;
-  position: relative;
-  font-size: 16px;
-  font-family: 'ZenMaruGothicRegular';
+  font-size: 18px;
 }
-.video-wrapper .about-video p:before {
-  content: '';
-  width: 8px;
-  height: 8px;
+.video-wrapper .about-video p img {
   display: inline-block;
-  background-color: #FDFA25;
-  margin-right: 10px;
+  height: 20px;
 }
 .video-wrapper .about-video h2 {
   position: relative;
@@ -397,18 +450,16 @@ header nav .phone a img {
   content: '';
   display: block;
   position: absolute;
-  width: 200px;
+  width: 450px;
   height: 8px;
   top: 32px;
   left: 50px;
   z-index: -1;
   background-color: #FDFA25;
 }
-.video-wrapper .video-1 {
-  top: 90px;
-}
 footer {
   width: 100%;
+  height: 150px;
   background-color: #eeeeee;
   padding: 0px;
   padding: 0px  0px 0px  0px;
@@ -440,7 +491,6 @@ footer .nav {
   width: calc(100% / 3);
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: end;
 }
 footer .nav li {
@@ -455,24 +505,275 @@ footer .nav li a {
   position: relative;
   text-transform: uppercase;
 }
-footer .contacts {
+footer .contacts-footer {
   display: flex;
   width: calc(100% / 3);
   align-items: end;
+  flex-direction: column;
 }
-footer .contacts .phone a {
+footer .contacts-footer .phone a {
   display: flex;
   text-decoration: none;
   color: black;
   width: 255px;
 }
-footer .contacts .phone a img {
+footer .contacts-footer .phone a img {
   display: inline-block;
   width: 16px;
   height: 16px;
   padding-right: 10px;
   padding-top: 5px;
 }
+.map-wrapper {
+  height: 550px;
+  margin: 200px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 8% 20px;
+}
+.map-wrapper .title {
+  display: none!important;
+}
+.map-wrapper .map-full-hd {
+  display: flex;
+  flex-grow: 1;
+}
+.map-wrapper .map-mob {
+  display: none;
+}
+.map-wrapper .adress-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+}
+.map-wrapper .adress-wrapper .attention {
+  width: 90%;
+  margin: 0px 10% 0px 0px;
+  height: 130px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
+  font-size: 16px;
+  line-height: 20px;
+  border-left: 2px solid #FDFA25;
+  border-bottom: 2px solid #FDFA25;
+  box-shadow: 3px -3px 2px rgba(0, 0, 0, 0.1);
+}
+.map-wrapper .adress-wrapper .attention p {
+  width: 80%;
+  font-size: 18px;
+  margin: 20px 10% 0px;
+}
+.map-wrapper .adress-wrapper .adress {
+  flex-grow: 1;
+  padding-top: 40px;
+}
+.map-wrapper .adress-wrapper .adress a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding-top: 10px;
+  font-size: 18px;
+}
+.map-wrapper .adress-wrapper .adress a img {
+  height: 16px;
+  margin-right: 10px;
+}
 .hide {
   display: none!important;
+}
+@media screen and (max-width: 550px) {
+  header {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    margin: 0px;
+  }
+  header nav {
+    margin: 0px 0px 0px 0px!important;
+    flex-direction: column;
+  }
+  header nav .logo img {
+    width: 255px;
+  }
+  header nav menu {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header nav menu li {
+    text-align: center;
+    margin-top: 10px;
+  }
+  header nav menu li a:after {
+    display: none;
+  }
+  header nav .phone a {
+    display: inline;
+  }
+  .about {
+    padding-top: 30px;
+    margin: 0px!important;
+  }
+  .about .text-wrapper {
+    width: 100%;
+    margin: 7% 0px;
+  }
+  .about .text-wrapper .text-fake {
+    display: none;
+  }
+  .about .text-wrapper .text {
+    width: 100%;
+    margin: 0px 3%;
+    text-align: center;
+    align-items: center;
+  }
+  .about .text-wrapper .text h1 {
+    line-height: 40px;
+  }
+  .about .image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 750px;
+    background: url('kichen_video_1.jpg');
+    background-size: cover;
+  }
+  .about .image img {
+    display: none!important;
+  }
+  .slider {
+    margin: 15px;
+    padding: 0px;
+  }
+  .slider .wrapper .carousel img {
+    padding-right: 0px;
+  }
+  .slider .wrapper .buttons {
+    justify-content: center;
+  }
+  .contacts {
+    width: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .contacts .title {
+    margin: auto 5%;
+    width: 90%;
+  }
+  .contacts .title h2 {
+    width: 100%;
+  }
+  .contacts .title h2:after {
+    width: 300px;
+    left: 50px;
+  }
+  .contacts .form-box {
+    margin-top: 0px;
+    height: 100%;
+  }
+  .contacts small {
+    margin: 3% 5%;
+  }
+  .video-wrapper {
+    width: 90%;
+    margin: 20px 3%;
+    flex-direction: column-reverse;
+    padding-top: 0px;
+  }
+  .video-wrapper .video-wrapper {
+    margin: auto;
+  }
+  .video-wrapper .about-video {
+    text-align: center;
+    padding: 0px;
+  }
+  .video-wrapper .about-video h2 {
+    padding: 0px;
+  }
+  .video-wrapper .about-video h2::after {
+    width: 60%;
+  }
+  .video-wrapper .video-wrap {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .clients {
+    height: 100%;
+    padding-bottom: 20px;
+  }
+  .clients .brands {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .clients .brands img {
+    height: 100%;
+    width: 45%;
+  }
+  .map-wrapper {
+    flex-direction: column;
+    align-items: center;
+    height: 820px;
+    margin: 20px 3%;
+  }
+  .map-wrapper .adress-wrapper {
+    width: 100%;
+  }
+  .map-wrapper .adress-wrapper .attention {
+    width: 90%;
+    margin: 0px 5%;
+  }
+  .map-wrapper .adress-wrapper .adress {
+    width: 90%;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+  }
+  .map-wrapper .map-full-hd {
+    display: none;
+  }
+  .map-wrapper .map-mob {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+  }
+  footer {
+    height: 350px;
+    flex-direction: column-reverse;
+  }
+  footer .logo {
+    justify-content: center;
+  }
+  footer .logo img {
+    padding: 0px;
+  }
+  footer .nav {
+    align-items: center;
+  }
+  footer .contacts-footer {
+    align-items: center;
+    margin: 20px 0px;
+  }
+  footer .contacts-footer .phone {
+    display: flex;
+    justify-content: center;
+  }
+  footer .contacts-footer .phone a {
+    display: inline-block;
+    text-align: center;
+  }
+  .carousel img {
+    width: 100%!important;
+  }
+}
+@media screen and (max-width: 137px) {
+  header .logo img {
+    width: 305px!important;
+  }
 }
