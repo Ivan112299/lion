@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="main.css" />
     <!-- 32×32 -->
     <title>Lion - мебельная компания</title>
   </head>
@@ -11,7 +12,7 @@
     <header>
       <nav>
         <a href="" class="logo">
-          <img src="m_logo.png" alt="Lion" />
+          <img src="icons/logo.png" alt="Lion" />
         </a>
         <menu>
           <li><a href="#block_2">Проекты</a></li>
@@ -22,14 +23,14 @@
         </menu>
         <div class="phone">
           <a href="tel:+79206763078">
-            <img src="phone.png" alt="" /> +7 (920) 676-30-78</a
+            <img src="icons/phone.png" alt="" /> +7 (920) 676-30-78</a
           >
         </div>
       </nav>
     </header>
     <div class="about">
       <div class="image">
-        <img src="kichen_1.jpg" alt="Кухня" />
+        <img src="icons/kichen_1.jpg" alt="Кухня" />
       </div>
       <div class="text-wrapper">
         <div class="text">
@@ -59,6 +60,7 @@
         <div class="text-fake"></div>
       </div>
     </div>
+    
     <div class="slider" id="block_2">
       <div class="full-photo"></div>
       <div class="wrapper">
@@ -527,6 +529,15 @@
         </div>
       </div>
     </div>
+    <div class="preview hide">
+      <div class="photo-prev ">
+        <img 
+          src="photo/01.jpg"
+          alt="Фото"
+          draggable="false">
+      </div>
+        <button class="btn btn-close-prev">Закрыть</button>
+    </div>
     <div class="contacts" id="block_3">
       <div class="title">
         <h2>Оставьте заявку на замер технолога</h2>
@@ -553,13 +564,16 @@
           />
           <label for="name">Ваше имя</label>
         </div>
-        <div class="input-box">
+        <div class="input-box ">
           <input
             type="tel"
             name="phone"
-            class="item"
+            class="item input-phone"
             placeholder=" "
             id="phone"
+            pattern="+7[0-9]{3} [0-9]{3} [0-9]{4}" 
+            maxlength="12"
+            required
           />
           <label for="phone">Номер телефона для связи</label>
         </div>
@@ -591,10 +605,10 @@
           preload="auto"
           width="320"
           height="585"
-          poster="kichen_video_1.jpg"
+          poster="icons/kichen_video_1.jpg"
           data-setup="{}"
         >
-          <source src="video-1.mp4" type="video/mp4" />
+          <source src="video/video-1.mp4" type="video/mp4" />
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading
             to a web browser that
@@ -607,23 +621,23 @@
       <div class="about-video">
         <h2>5 причин заказать мебель у нас</h2>
         <p>
-          <img src="check-mark.png" alt="" /> Качество. Мы работаем только с
+          <img src="icons/check-mark.png" alt="" /> Качество. Мы работаем только с
           высококачественными материалами и фурнитурой. Даем гарантию 2 года.
         </p>
         <p>
-          <img src="check-mark.png" alt="" /> Имеем колоссальный опыт работы в
+          <img src="icons/check-mark.png" alt="" /> Имеем колоссальный опыт работы в
           данной сфере (с 2007г.)
         </p>
         <p>
-          <img src="check-mark.png" alt="" /> Работаем индивидуально с каждым
+          <img src="icons/check-mark.png" alt="" /> Работаем индивидуально с каждым
           заказчиком. Делаем современный, удобный и продуманный дизайн-проект.
         </p>
         <p>
-          <img src="check-mark.png" alt="" /> Учитываем все индивидуальные
+          <img src="icons/check-mark.png" alt="" /> Учитываем все индивидуальные
           особенности при проектировании.
         </p>
         <p>
-          <img src="check-mark.png" alt="" /> Сроки исполнения. Озвучиваем
+          <img src="icons/check-mark.png" alt="" /> Сроки исполнения. Озвучиваем
           реальные сроки и соблюдаем их.
         </p>
       </div>
@@ -647,22 +661,22 @@
         <div class="attention">
           <p>
             Внимание!<br />
-            посещение офиса возможно по предварительной записи
+            Посещение офиса возможно по предварительной записи
           </p>
         </div>
         <div class="adress">
           <a>
-            <img src="placeholder.png" alt="" /> Рабфаковская, 17 <br />
+            <img src="icons/placeholder.png" alt="" /> Рабфаковская, 17 <br />
             2 этаж, офис 4</a
           >
           <a href="tel:+79206763078">
-            <img src="phone.png" alt="" /> +7 (920) 676-30-78</a
+            <img src="icons/phone.png" alt="" /> +7 (920) 676-30-78</a
           >
-          <a href="lion37mk@mail.ru">
-            <img src="email.png" alt="" /> lion37mk@mail.ru</a
+          <a>
+            <img src="icons/email.png" alt="" /> lion37mk@mail.ru</a
           >
           <a href="https://vk.com/lion37mk">
-            <img src="vk (1).png" alt="" /> vk.com/lion_37mk</a
+            <img src="icons/vk (1).png" alt="" /> vk.com/lion_37mk</a
           >
         </div>
       </div>
@@ -688,7 +702,7 @@
     </div>
     <footer>
       <a href="" class="logo">
-        <img src="m_logo.png" alt="Lion" />
+        <img src="icons/logo.png" alt="Lion" />
       </a>
       <div class="col-2"></div>
       <div class="col-3"></div>
@@ -700,20 +714,20 @@
       <div class="contacts-footer">
         <div class="phone">
           <a href="tel:+79206763078">
-            <img src="phone.png" alt="" /> +7 (920) 676-30-78</a
+            <img src="icons/phone.png" alt="" /> +7 (920) 676-30-78</a
           >
         </div>
         <div class="phone">
-          <a href="lion37mk@mail.ru">
-            <img src="email.png" alt="" /> lion37mk@mail.ru</a
-          >
+          <a>
+            <img src="icons/email.png" alt="" /> lion37mk@mail.ru</a>
         </div>
       </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    
     <script type="module" src="main.js"></script>
     <meta name="referrer" content="no-referrer" />
-    <link rel="stylesheet" href="main.css" />
+   
   </body>
 </html>
