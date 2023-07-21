@@ -6,12 +6,17 @@ const firstImg = carousel.querySelectorAll('img')[0];
 // const curPhoto = carousel.querySelectorAll('img')[1];
 const countPhoto = carousel.querySelectorAll('img').length;
 const counterPhoto = document.querySelector('.numof');
+const inputPhone = document.querySelector('.input-phone')
 
 const header = document.querySelector('header')
 const logo = document.querySelector('.logo')
 
 buttonNext.addEventListener('click', nextPhoto)
 buttonPrev.addEventListener('click', prevPhoto)
+
+inputPhone.addEventListener('click', () => {
+    inputPhone.value = '+7'
+})
 
 let currentScroll = 0;
 

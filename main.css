@@ -28,11 +28,6 @@
   font-weight: 700;
   src: local('Zen Maru'), url('fonts/ZenMaruGothic-Black.ttf') format('truetype');
 }
-@media screen and (max-width: 1300px) {
-  .carousel img {
-    width: calc(100% / 2) !important;
-  }
-}
 .btn-in-head {
   text-transform: uppercase;
   color: black;
@@ -65,6 +60,9 @@
 .disable {
   opacity: 0.3;
   pointer-events: none;
+}
+.hide {
+  display: none !important;
 }
 .width-zoom-in {
   width: 255px;
@@ -184,8 +182,8 @@ header nav .phone img {
   -webkit-backdrop-filter: blur(2px);
   padding: 15px;
   line-height: 20px;
-  border-left: 2px solid #FDFA25;
-  border-bottom: 2px solid #FDFA25;
+  border-left: 2px solid #fdfa25;
+  border-bottom: 2px solid #fdfa25;
   box-shadow: 3px -3px 2px rgba(0, 0, 0, 0.1);
 }
 .about .text-wrapper .text h1 {
@@ -230,16 +228,16 @@ header nav .phone img {
 .slider .wrapper .carousel .dragging img {
   pointer-events: none;
 }
-.slider .wrapper .numof {
-  display: inline-block;
-  line-height: 0px;
-}
 .slider .wrapper .buttons {
   display: flex;
   justify-content: end;
   margin-top: 20px;
 }
-.slider .wrapper .btn-next {
+.slider .wrapper .buttons .numof {
+  display: inline-block;
+  line-height: 0px;
+}
+.slider .wrapper .buttons .btn-prev {
   display: inline-block;
   background-color: #fff;
   width: 100px;
@@ -248,36 +246,7 @@ header nav .phone img {
   cursor: pointer;
   position: relative;
 }
-.slider .wrapper .btn-next:after {
-  content: '';
-  position: absolute;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  width: 11px;
-  height: 11px;
-  transform: rotate(-45deg);
-  top: 9px;
-  right: 4px;
-}
-.slider .wrapper .btn-next:before {
-  content: '';
-  position: absolute;
-  right: 3px;
-  width: 80px;
-  height: 1px;
-  top: 14px;
-  background: black;
-}
-.slider .wrapper .btn-prev {
-  display: inline-block;
-  background-color: #fff;
-  width: 100px;
-  border: 0px;
-  height: 30px;
-  cursor: pointer;
-  position: relative;
-}
-.slider .wrapper .btn-prev:after {
+.slider .wrapper .buttons .btn-prev:after {
   content: '';
   position: absolute;
   border-top: 1px solid black;
@@ -288,10 +257,39 @@ header nav .phone img {
   top: 9px;
   left: 4px;
 }
-.slider .wrapper .btn-prev:before {
+.slider .wrapper .buttons .btn-prev:before {
   content: '';
   position: absolute;
   left: 3px;
+  width: 80px;
+  height: 1px;
+  top: 14px;
+  background: black;
+}
+.slider .wrapper .buttons .btn-next {
+  display: inline-block;
+  background-color: #fff;
+  width: 100px;
+  border: 0px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.slider .wrapper .buttons .btn-next:after {
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 11px;
+  height: 11px;
+  transform: rotate(-45deg);
+  top: 9px;
+  right: 4px;
+}
+.slider .wrapper .buttons .btn-next:before {
+  content: '';
+  position: absolute;
+  right: 3px;
   width: 80px;
   height: 1px;
   top: 14px;
@@ -329,7 +327,7 @@ header nav .phone img {
   top: 32px;
   left: 100px;
   z-index: -1;
-  background-color: #FDFA25;
+  background-color: #fdfa25;
 }
 .contacts .title .subtitle {
   margin: 10px 0px;
@@ -392,6 +390,8 @@ header nav .phone img {
   height: 100%;
   margin-left: 8%;
   margin-right: 8%;
+  padding-top: 135px;
+  margin-top: -135px;
   position: relative;
   flex-direction: column;
 }
@@ -422,6 +422,9 @@ header nav .phone img {
   justify-content: space-between;
   padding-top: 135px;
   margin-top: -135px;
+}
+.video-wrapper .video-wrap {
+  z-index: 900;
 }
 .video-wrapper .about-video {
   padding: 20px;
@@ -455,14 +458,14 @@ header nav .phone img {
   top: 32px;
   left: 50px;
   z-index: -1;
-  background-color: #FDFA25;
+  background-color: #fdfa25;
 }
 footer {
   width: 100%;
   height: 150px;
   background-color: #eeeeee;
   padding: 0px;
-  padding: 0px  0px 0px  0px;
+  padding: 0px 0px 0px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -532,7 +535,7 @@ footer .contacts-footer .phone a img {
   margin: 100px 8% 20px;
 }
 .map-wrapper .title {
-  display: none!important;
+  display: none !important;
 }
 .map-wrapper .map-full-hd {
   display: flex;
@@ -556,8 +559,8 @@ footer .contacts-footer .phone a img {
   backdrop-filter: blur(2px);
   font-size: 16px;
   line-height: 20px;
-  border-left: 2px solid #FDFA25;
-  border-bottom: 2px solid #FDFA25;
+  border-left: 2px solid #fdfa25;
+  border-bottom: 2px solid #fdfa25;
   box-shadow: 3px -3px 2px rgba(0, 0, 0, 0.1);
 }
 .map-wrapper .adress-wrapper .attention p {
@@ -580,9 +583,6 @@ footer .contacts-footer .phone a img {
   height: 16px;
   margin-right: 10px;
 }
-.hide {
-  display: none!important;
-}
 @media screen and (max-width: 550px) {
   header {
     width: 100%;
@@ -594,29 +594,29 @@ footer .contacts-footer .phone a img {
     margin: 0px;
   }
   header nav {
-    margin: 0px 0px 0px 0px!important;
+    margin: 0px 0px 0px 0px !important;
     flex-direction: column;
   }
   header nav .logo img {
     width: 255px;
   }
-  header nav menu {
+  header menu {
     flex-direction: column;
     justify-content: space-between;
   }
-  header nav menu li {
+  header menu li {
     text-align: center;
     margin-top: 10px;
   }
-  header nav menu li a:after {
+  header menu li a:after {
     display: none;
   }
-  header nav .phone a {
+  header .phone a {
     display: inline;
   }
   .about {
     padding-top: 30px;
-    margin: 0px!important;
+    margin: 0px !important;
   }
   .about .text-wrapper {
     width: 100%;
@@ -639,11 +639,11 @@ footer .contacts-footer .phone a img {
     position: absolute;
     width: 100%;
     height: 750px;
-    background: url('kichen_video_1.jpg');
+    background: url('icons/kichen_video_1.jpg');
     background-size: cover;
   }
   .about .image img {
-    display: none!important;
+    display: none !important;
   }
   .slider {
     margin: 15px;
@@ -652,7 +652,7 @@ footer .contacts-footer .phone a img {
   .slider .wrapper .carousel img {
     padding-right: 0px;
   }
-  .slider .wrapper .buttons {
+  .slider .wrapper .carousel img .buttons {
     justify-content: center;
   }
   .contacts {
@@ -695,7 +695,7 @@ footer .contacts-footer .phone a img {
   .video-wrapper .about-video h2 {
     padding: 0px;
   }
-  .video-wrapper .about-video h2::after {
+  .video-wrapper .about-video h2:after {
     width: 60%;
   }
   .video-wrapper .video-wrap {
@@ -769,11 +769,16 @@ footer .contacts-footer .phone a img {
     text-align: center;
   }
   .carousel img {
-    width: 100%!important;
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 137px) {
   header .logo img {
-    width: 305px!important;
+    width: 305px !important;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .carousel img {
+    width: calc(100% / 2) !important;
   }
 }

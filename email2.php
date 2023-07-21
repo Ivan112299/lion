@@ -16,14 +16,14 @@ $sub='Заявка с сайта Lion'; //сабж
 $send = mail ($address,$sub,$mes,"Content-type:text/plain; charset = utf-8\r\nFrom: ? ");
 
 ini_set('short_open_tag', 'On');
-header('Refresh: 3; URL=http://lion-mk.ru');
+header('Refresh: 3; URL=https://lion-mk.ru/#block_3');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="3; url=http://lion-mk.ru">
+<meta http-equiv="refresh" content="3; url=https://lion-mk.ru/#block_3">
 <title>С вами свяжутся</title>
 <meta name="generator">
 <style type="text/css">
@@ -60,7 +60,7 @@ h2{
 }
 </style>
 <script type="text/javascript">
-setTimeout('location.replace("http://lion-mk.ru")', 1500);
+setTimeout('location.replace("https://lion-mk.ru/#block_3")', 1500);
 /*Изменить текущий адрес страницы через 1.5 секунды (1500 миллисекунд)*/
 </script> 
 </head>
