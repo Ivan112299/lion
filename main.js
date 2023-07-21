@@ -178,7 +178,7 @@ $(document).ready(function () {
         var formNm = $('#' + formID);
         $.ajax({
             type: "POST",
-            url: '/send.php',
+            url: '/email2.php',
             data: formNm.serialize(),
             beforeSend: function () {
                 // Вывод текста в процессе отправки
