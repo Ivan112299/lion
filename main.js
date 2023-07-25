@@ -24,8 +24,7 @@ photosMini.forEach(item => {
         containerPrev.classList.remove('hide')
 
         viewPhoto.setAttribute('src', currentPhotoUrl)
-        console.log('currentPhoto', currentPhotoUrl)
-        console.log('viewPhoto', viewPhoto)
+    
         viewPhoto.addEventListener('click', (e) => {
             e.stopPropagation()         //отключаю всплытие
         })
@@ -85,7 +84,7 @@ function showArrow (){
 
 function counter (next) {
     if (next && curPhoto < countPhoto) {
-        console.log('лист вправо')
+
         curPhoto++
         buttonPrev.classList.remove('disable')
         if (curPhoto >= countPhoto) {
@@ -93,7 +92,7 @@ function counter (next) {
             
         }
     } else if (!next && curPhoto > 1) {
-        console.log('лист влево')
+       
         curPhoto--
         buttonNext.classList.remove('disable')
         if (curPhoto <= 1) {
@@ -214,8 +213,9 @@ $(document).ready(function () {
                 $(formNm).html('<p style="text-align:center">Отправка...</p>');
             },
             success: function (data) {
+                console.log('успешно')
                 // Вывод текста результата отправки
-                $(formNm).html('<p style="text-align:center">'+data+'</p>');
+                $(formNm).html('<p style="text-align:center; width:100%">Спасибо, мы свяжемся с вами в ближайщее время!</p>');
             },
             error: function (jqXHR, text, error) {
                 // Вывод текста ошибки отправки
