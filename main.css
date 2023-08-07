@@ -247,11 +247,14 @@ header nav .phone img {
   object-fit: contain;
 }
 .slider {
-  height: 600px;
   margin: 100px 8% 0px;
   padding-top: 100px;
   margin-top: -100px;
   padding-bottom: 90px;
+}
+.slider .wrapper {
+  display: flex;
+  flex-direction: column;
 }
 .slider .wrapper .carousel {
   margin-top: 40px;
@@ -277,16 +280,21 @@ header nav .phone img {
 .slider .wrapper .carousel .dragging img {
   pointer-events: none;
 }
-.slider .wrapper .buttons {
+.slider .wrapper .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.slider .wrapper .navigation .buttons {
   display: flex;
   justify-content: end;
   margin-top: 20px;
 }
-.slider .wrapper .buttons .numof {
+.slider .wrapper .navigation .buttons .numof {
   display: inline-block;
   line-height: 0px;
 }
-.slider .wrapper .buttons .btn-prev {
+.slider .wrapper .navigation .buttons .btn-prev {
   display: inline-block;
   background-color: #fff;
   width: 100px;
@@ -295,7 +303,7 @@ header nav .phone img {
   cursor: pointer;
   position: relative;
 }
-.slider .wrapper .buttons .btn-prev:after {
+.slider .wrapper .navigation .buttons .btn-prev:after {
   content: '';
   position: absolute;
   border-top: 1px solid black;
@@ -306,7 +314,7 @@ header nav .phone img {
   top: 9px;
   left: 4px;
 }
-.slider .wrapper .buttons .btn-prev:before {
+.slider .wrapper .navigation .buttons .btn-prev:before {
   content: '';
   position: absolute;
   left: 3px;
@@ -315,7 +323,7 @@ header nav .phone img {
   top: 14px;
   background: black;
 }
-.slider .wrapper .buttons .btn-next {
+.slider .wrapper .navigation .buttons .btn-next {
   display: inline-block;
   background-color: #fff;
   width: 100px;
@@ -324,7 +332,7 @@ header nav .phone img {
   cursor: pointer;
   position: relative;
 }
-.slider .wrapper .buttons .btn-next:after {
+.slider .wrapper .navigation .buttons .btn-next:after {
   content: '';
   position: absolute;
   border-bottom: 1px solid black;
@@ -335,7 +343,7 @@ header nav .phone img {
   top: 9px;
   right: 4px;
 }
-.slider .wrapper .buttons .btn-next:before {
+.slider .wrapper .navigation .buttons .btn-next:before {
   content: '';
   position: absolute;
   right: 3px;
@@ -343,6 +351,37 @@ header nav .phone img {
   height: 1px;
   top: 14px;
   background: black;
+}
+.slider .wrapper .navigation .all-photo {
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  position: relative;
+}
+.slider .wrapper .navigation .all-photo a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  position: relative;
+}
+.slider .wrapper .navigation .all-photo a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: 0.5s;
+  left: 0px;
+  top: 35px;
+}
+.slider .wrapper .navigation .all-photo a:hover::after {
+  transition: 0.5s;
+  left: 10px;
+  transform: translate(5px, 0px);
+  opacity: 1;
+  visibility: visible;
 }
 .contacts {
   height: 100%;
@@ -698,11 +737,17 @@ footer .contacts-footer .phone a img {
     margin: 15px;
     padding: 0px;
   }
+  .slider .wrapper .navigation {
+    flex-direction: column;
+  }
+  .slider .wrapper .navigation .all-photo {
+    justify-content: center;
+  }
+  .slider .wrapper .navigation .buttons {
+    justify-content: center;
+  }
   .slider .wrapper .carousel img {
     padding-right: 0px;
-  }
-  .slider .wrapper .carousel img .buttons {
-    justify-content: center;
   }
   .contacts {
     width: 100%;

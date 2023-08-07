@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="gallery-main.css" />
+    <!-- 32×32 -->
+    <title>Lion - мебельная компания</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="icons/logo.png" alt="Lion" />
+        </a>
+        <menu>
+          <li><a href="#block_3">Записаться на замер</a></li>
+          <li><a href="index.html">Вернуться</a></li>
+          
+
+        </menu>
+        <div class="phone">
+          <a href="tel:+79206763078">
+            <img src="icons/phone.png" alt="" /> +7 (920) 676-30-78</a
+          >
+        </div>
+      </nav>
+    </header>
+    
+    <div class="slider slider-ya " id="block_2">
+      <div class="full-photo"></div>
+      <div class="wrapper">
+        <div class="carousel carousel-slider-ya">
+        </div>
+      </div>
+    </div>
+    <div class="preview hide">
+      <div class="photo-prev">
+        <img src="photo/01.jpg" alt="Фото" draggable="false" />
+      </div>
+      <button class="btn btn-close-prev">Закрыть</button>
+    </div>
+    <div class="contacts" id="block_3">
+      <div class="title">
+        <h2>Оставьте заявку на замер технолога</h2>
+        <div class="subtitle">
+          Мы свяжемся с Вами, договоримся о замере в удобное для Вас время,<br />
+          технолог выполнит замер и мы подготовим проект Вашей мебели по
+          размерам помещения
+        </div>
+      </div>
+      <form
+        class="form-box"
+        action="email2.php"
+        method="post"
+        id="form-request"
+      >
+        <p style="text-align: center" class="cuccess-send hide">
+          Спасибо, мы свяжемся с вами в ближайщее время!
+        </p>
+        <div class="input-box">
+          <input
+            type="text"
+            name="name"
+            class="item"
+            placeholder=" "
+            required
+            id="username"
+          />
+          <label for="name">Ваше имя</label>
+        </div>
+        <div class="input-box">
+          <input
+            type="tel"
+            name="phone"
+            class="item input-phone"
+            placeholder=" "
+            id="phone"
+            pattern="+7[0-9]{10}"
+            maxlength="12"
+            required
+          />
+          <label for="phone">Номер телефона для связи</label>
+        </div>
+        <div class="input-box">
+          <input
+            type="text"
+            name="message"
+            class="item"
+            placeholder=" "
+            id="message"
+          />
+          <label for="message">Оставьте комментарий, если это необходимо</label>
+        </div>
+        <div class="button-box">
+          <button class="btn" type="submit">Оставить заявку</button>
+        </div>
+      </form>
+      <small
+        >Нажимая на кнопку "Оставить заявку", Вы даете согласие на
+        <a href="persdata.html">обработку персональных данных</a></small
+      >
+    </div>
+    
+    <footer>
+      <a href="" class="logo">
+        <img src="icons/logo.png" alt="Lion" />
+      </a>
+      <div class="col-2"></div>
+      <div class="col-3"></div>
+      <div class="nav">
+      </div>
+      <div class="contacts-footer">
+        <div class="phone">
+          <a href="tel:+79206763078">
+            <img src="icons/phone.png" alt="" /> +7 (920) 676-30-78</a
+          >
+        </div>
+        <div class="phone">
+          <a> <img src="icons/email.png" alt="" /> lion37mk@mail.ru</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="module" src="gallery-main.js"></script>
+    <meta name="referrer" content="no-referrer" />
+  </body>
+</html>

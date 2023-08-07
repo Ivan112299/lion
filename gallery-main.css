@@ -1,0 +1,467 @@
+@font-face {
+  font-family: 'ZenMaruGothicLight';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ZenMaruGothicRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ZenMaruGothicMedium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ZenMaruGothicBold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ZenMaruGothicBlack';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Zen Maru'), url('fonts/ZenMaruGothic-Black.ttf') format('truetype');
+}
+.cuccess-send {
+  height: 100%;
+  margin: 90px 18% 0px;
+  padding-bottom: 150px;
+  padding-top: 205px;
+  margin-top: -205px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.btn-in-head {
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 20px 60px;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-in-head:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
+}
+.btn {
+  color: black;
+  padding: 20px 60px;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 1px solid black;
+  background-color: #fff;
+  display: block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), -3px -3px 10px rgba(0, 0, 0, 0.1);
+}
+.disable {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.hide {
+  display: none !important;
+}
+.width-zoom-in {
+  width: 255px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #fff;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'ZenMaruGothicRegular';
+}
+.preview {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  z-index: 1001;
+}
+.preview .btn-close-prev {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  flex-direction: column;
+  margin: auto;
+}
+.preview .photo-prev {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin: auto;
+  height: 88%;
+}
+.preview .photo-prev img {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #fff;
+  object-fit: contain;
+}
+.slider {
+  margin: 0px 8% 0px;
+  padding-top: 165px;
+}
+.slider .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.slider .wrapper .carousel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.slider .wrapper .carousel .photo-mini-wrap {
+  width: calc(100% / 4);
+}
+.slider .wrapper .carousel .photo-mini-wrap img {
+  display: block;
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
+  border: 5px solid #fff;
+}
+header {
+  position: fixed;
+  height: 170px;
+  width: 100%;
+  background-color: #fff;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1000;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 8%;
+  transition: all 0.5s ease-in-out;
+}
+header nav img {
+  transition: all 0.5s ease-in-out;
+  width: 255px;
+  display: flex;
+}
+header nav menu {
+  display: flex;
+  padding: 0px;
+}
+header nav menu li {
+  font-size: 16px;
+  list-style: none;
+  margin: 0px 15px;
+}
+header nav menu li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  position: relative;
+  text-transform: uppercase;
+}
+header nav menu li a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: 0.5s;
+  left: 0px;
+  top: 35px;
+}
+header nav menu li a:hover::after {
+  transition: 0.5s;
+  left: 10px;
+  transform: translate(5px, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+header nav .phone a {
+  display: inline;
+  text-decoration: none;
+  color: black;
+  width: 255px;
+}
+header nav .phone img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+.contacts {
+  margin: 90px 18% 0px;
+  padding-bottom: 150px;
+  padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contacts .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 35px;
+}
+.contacts .title h2 {
+  position: relative;
+  font-family: 'ZenMaruGothicMedium';
+  font-weight: 100;
+  font-size: 32px;
+  margin: 10px 0px;
+}
+.contacts .title h2:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 480px;
+  height: 8px;
+  top: 32px;
+  left: 100px;
+  z-index: -1;
+  background-color: #fdfa25;
+}
+.contacts .title .subtitle {
+  margin: 10px 0px;
+}
+.contacts .form-box {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  width: 100%;
+  height: 270px;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.contacts .form-box .button-box {
+  margin: auto;
+}
+.contacts .form-box .input-box {
+  display: inline-block;
+  width: 40%;
+  padding: 40px;
+}
+.contacts .form-box .input-box input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  border-bottom: 1px solid black;
+  transition: 0.5s;
+  font-size: 18px;
+  font-family: 'ZenMaruGothicBold';
+}
+.contacts .form-box .input-box input:focus ~ label {
+  transform: translateY(-330%);
+}
+.contacts .form-box .input-box input:not(:placeholder-shown) ~ label {
+  transform: translateY(-330%);
+}
+.contacts .form-box .input-box label {
+  font-size: 15px;
+  font-family: 'ZenMaruGothicRegular';
+  display: block;
+  position: absolute;
+  color: #7a7a7a;
+  transform: translateY(-200%);
+  transition: 0.5s;
+  pointer-events: none;
+}
+.contacts small {
+  opacity: 0.5;
+  text-align: center;
+}
+.contacts small a {
+  color: black;
+}
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #eeeeee;
+  padding: 0px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .logo {
+  width: calc(100% / 5);
+  display: flex;
+  align-items: center;
+}
+footer .logo img {
+  width: 205px;
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+footer .col-2 {
+  width: calc(100% / 5);
+  display: flex;
+}
+footer .col-3 {
+  width: calc(100% / 5);
+  display: flex;
+}
+footer .nav {
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+footer .nav li {
+  font-size: 16px;
+  list-style: none;
+  margin: 0px 20px;
+}
+footer .nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  position: relative;
+  text-transform: uppercase;
+}
+footer .contacts-footer {
+  display: flex;
+  width: calc(100% / 3);
+  align-items: end;
+  flex-direction: column;
+}
+footer .contacts-footer .phone a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  width: 255px;
+}
+footer .contacts-footer .phone a img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+@media screen and (max-width: 550px) {
+  header {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    margin: 0px;
+  }
+  header nav {
+    margin: 0px 0px 0px 0px !important;
+    flex-direction: column;
+  }
+  header nav .logo img {
+    width: 255px;
+  }
+  header menu {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header menu li {
+    text-align: center;
+    margin-top: 10px;
+  }
+  header menu li a:after {
+    display: none;
+  }
+  header .phone a {
+    display: inline;
+  }
+  .slider {
+    margin: 15px;
+    padding: 0px;
+  }
+  .slider .wrapper .carousel .photo-mini-wrap {
+    width: 100%;
+  }
+  .slider .wrapper .carousel .photo-mini-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slider .wrapper .carousel img {
+    padding-right: 0px;
+  }
+  .contacts {
+    width: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .contacts .title {
+    margin: auto 5%;
+    width: 90%;
+  }
+  .contacts .title h2 {
+    width: 100%;
+  }
+  .contacts .title h2:after {
+    width: 300px;
+    left: 50px;
+  }
+  .contacts .form-box {
+    margin-top: 0px;
+    height: 100%;
+  }
+  .contacts small {
+    margin: 3% 5%;
+  }
+  footer {
+    height: 350px;
+    flex-direction: column-reverse;
+  }
+  footer .logo {
+    justify-content: center;
+  }
+  footer .logo img {
+    padding: 0px;
+  }
+  footer .nav {
+    align-items: center;
+  }
+  footer .contacts-footer {
+    align-items: center;
+    margin: 20px 0px;
+  }
+  footer .contacts-footer .phone {
+    display: flex;
+    justify-content: center;
+  }
+  footer .contacts-footer .phone a {
+    display: inline-block;
+    text-align: center;
+  }
+}
