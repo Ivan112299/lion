@@ -1,0 +1,20 @@
+body {
+    padding: 30px;
+}
+img {
+    margin-top: 10px;
+    display: block;
+    height: 180px;
+    object-fit: cover;
+    padding-right: 10px;
+  }
+.admin-cont p {
+    display: inline;
+}
+.cont-photo {
+    display: inline-block;
+    border: 1px solid #DCDCDC;
+    margin: 5px;
+    padding: 5px;
+    
+}

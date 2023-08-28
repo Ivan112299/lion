@@ -18,7 +18,7 @@ $send = mail ($address,$sub,$mes,"Content-type:text/plain; charset = utf-8\r\nFr
 ini_set('short_open_tag', 'On');
 header('Refresh: 3; URL=https://lion-mk.ru/#block_3');
 ?>
-<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -70,4 +70,4 @@ setTimeout('location.replace("https://lion-mk.ru/#block_3")', 1500);
     	<h2> Мы с Вами свяжемся в ближайшее время!</h2>
     </div>
 </body>
-</html> -->
+</html>
